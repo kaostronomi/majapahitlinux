@@ -227,7 +227,7 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 # PRODUCTIVITY
 
 	# browser
-
+    # epiphany to firefox
     firefox
 
 	# office
