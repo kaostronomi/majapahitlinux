@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo setenforce 0
+sudo livecd-creator --fslabel=Majapahit-Linux-dev-x86_64-29 --config=majapahit-dev.ks --verbose --cache=junk/cache --tmpdir=junk/temp
+sudo chown leader:leader *.iso
+sudo setenforce 1
