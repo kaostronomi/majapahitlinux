@@ -1,0 +1,4 @@
+normalish   3840x3072 (11.8MP)
+standard    4096x3072 (12.6MP)
+tv-wide     4096x2304 (9.4MP)
+wide        5120x2672 (13.7MP)
