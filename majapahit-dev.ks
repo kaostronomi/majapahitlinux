@@ -7,7 +7,8 @@
 
 lang en_US.UTF-8
 keyboard us
-timezone US/Eastern
+#timezone US/Eastern
+timezone Asia/Jakarta
 auth --useshadow --passalgo=sha512
 selinux --enforcing
 firewall --enabled --service=mdns
@@ -86,17 +87,10 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
 # Make sure to sync any additions / removals done here with
 # workstation-product-environment in comps
-    @base-x
-    @core
     #@firefox
-    @fonts
     @gnome-desktop
-    @guest-desktop-agents
-    @hardware-support
     @libreoffice
-    @multimedia
     @networkmanager-submodules
-    @printing
     @workstation-product
 
 # Exclude unwanted packages from @anaconda-tools group
@@ -128,6 +122,10 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
     -gnome-backgrounds
 
 # BASIC
+    # rpmfusion
+    rpmfusion-free-release
+    rpmfusion-nonfree-release
+
 	# detect hardware
 	inxi
 
@@ -149,11 +147,11 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	# tweak
 	dconf-editor
 
-	# Add cosmetic for gnome-terminal
-	powerline
-	powerline-fonts
-	tmux-powerline
-	vim-powerline
+	## Add cosmetic for gnome-terminal
+	#powerline
+	#powerline-fonts
+	#tmux-powerline
+	#vim-powerline
 
 	# image viewer
 	eog
@@ -228,7 +226,7 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
 	# browser
     # epiphany to firefox
-    firefox
+	epiphany
 
 	# office
 	libreoffice
@@ -318,9 +316,6 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
 	# biner editor
 	ghex
-
-	# diagram
-	dia
 
 # C
 	# GCC installation
@@ -731,11 +726,11 @@ fi
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # set up auto-login
-cat > /etc/gdm/custom.conf << FOE
-[daemon]
-AutomaticLoginEnable=True
-AutomaticLogin=liveuser
-FOE
+#cat > /etc/gdm/custom.conf << FOE
+#[daemon]
+#AutomaticLoginEnable=True
+#AutomaticLogin=liveuser
+#FOE
 
 # Turn off PackageKit-command-not-found while uninstalled
 if [ -f /etc/PackageKit/CommandNotFound.conf ]; then
@@ -899,7 +894,7 @@ chmod a+x /usr/share/applications/majapahit.desktop
 rm /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override
 cat >> /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override << FOE
 [org.gnome.shell]
-favorite-apps=['firefox.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Terminal.desktop', 'anjuta.desktop', 'glade.desktop', 'org.gnome.Builder.desktop', 'anaconda.desktop']
+favorite-apps=['org.gnome.Epiphany.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Terminal.desktop', 'anjuta.desktop', 'glade.desktop', 'org.gnome.Builder.desktop', 'anaconda.desktop']
 enabled-extensions=['background-logo@fedorahosted.org', 'suspend-button@laserb', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'disconnect-wifi@kgshank.net']
 
 [org.gnome.desktop.interface]
@@ -912,6 +907,9 @@ document-font-name='Sans 10'
 clock-show-date=true
 clock-show-seconds=true
 show-battery-percentage=true
+
+[org.gnome.shell.extensions.user-theme]
+name=''
 
 [org.gnome.desktop.background]
 picture-uri='file:///usr/share/backgrounds/arjuna/default/arjuna.xml'
@@ -938,7 +936,7 @@ titlebar-font='Cantarell Bold 10'
 autorun-never=true
 
 [org.gnome.settings-daemon.plugins.color]
-night-light-enabled=false
+night-light-enabled=true
 
 [org.gnome.builder.editor]
 style-scheme-name='builder-dark'
@@ -966,6 +964,22 @@ display-overview-map=true
 insert-spaces=true
 scheme='builder-dark'
 
+[org.gnome.Epiphany]
+enable-smooth-scrolling=true
+
+[org.gnome.Epiphany.ui]
+tabs-bar-visibility-policy='always'
+
+[org.gnome.Epiphany.state]
+is-maximized=true
+
+[org.gnome.Epiphany.sync]
+sync-history-enabled=true
+sync-passwords-enabled=true
+
+[org.gnome.desktop.datetime]
+automatic-timezone=true
+
 FOE
 
 rm /usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override
@@ -983,14 +997,6 @@ FOE
 
 # .bashrc
 cat >> /etc/skel/.bashrc << FOE
-
-# powerline
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
-fi
 
 #youtube-dl
 alias yt="youtube-dl -if webm+bestaudio"
@@ -1025,7 +1031,6 @@ FOE
 
 # .tmux.conf
 cat >> /etc/skel/.tmux.conf << FOE
-source "/usr/share/tmux/powerline.conf"
 
 # Reloaded
 bind r source-file ~/.tmux.conf \; display "Reloaded config"
@@ -1042,14 +1047,14 @@ cat >> /etc/skel/.config/mimeapps.list << FOE
 [Default Applications]
 x-scheme-handler/mailto=org.gnome.Evolution.desktop
 text/plain=org.gnome.gedit.desktop
-text/html=firefox.desktop
+text/html=org.gnome.Epiphany.desktop
 application/xml=org.gnome.gedit.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=org.gnome.Evolution.desktop;
 text/plain=org.gnome.gedit.desktop;
 application/octet-stream=org.gnome.gedit.desktop
-text/html=firefox.desktop;org.gnome.gedit.desktop
+text/html=org.gnome.Epiphany.desktop;org.gnome.gedit.desktop
 application/x-java-keystore=org.gnome.gedit.desktop
 application/xml=org.gnome.gedit.desktop
 
@@ -1156,6 +1161,73 @@ cp -fr /etc/skel/.[^.]* /root
 
 # plymouthd
 sed -i 's/^Theme=.*/Theme=majapahit/' /usr/share/plymouth/plymouthd.defaults /etc/plymouth/plymouthd.conf
+
+# firefox seting, if install
+mkdir -p /usr/lib64/firefox/browser/defaults/preferences/
+rm /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js
+cat >> /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js << FOE
+pref("app.update.auto",                     false);
+pref("app.update.enabled",                  false);
+pref("app.update.autoInstallEnabled",       false);
+pref("general.smoothScroll",                true);
+pref("intl.locale.matchOS",                 true);
+pref("intl.locale.requested",               "");
+pref("toolkit.storage.synchronous",         0);
+pref("toolkit.networkmanager.disable",      false);
+pref("offline.autoDetect",                  true);
+pref("browser.backspace_action",            2);
+pref("browser.display.use_system_colors",   true);
+pref("browser.download.folderList",         1);
+pref("browser.link.open_external",          3);
+pref("browser.shell.checkDefaultBrowser",   false);
+pref("network.manage-offline-status",       true);
+pref("extensions.shownSelectionUI",         true);
+pref("ui.SpellCheckerUnderlineStyle",       1);
+pref("startup.homepage_override_url",       "");
+/* pref("browser.startup.homepage",            "data:text/plain,browser.startup.homepage=http://start.fedoraproject.org/"); */
+/* pref("browser.newtabpage.pinned",           '[{"url":"http://start.fedoraproject.org/","title":"Fedora Project - Start Page"}]'); */
+pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
+pref("media.gmp-gmpopenh264.provider.enabled",false);
+pref("media.gmp-gmpopenh264.autoupdate",false);
+pref("media.gmp-gmpopenh264.enabled",false);
+pref("media.gmp-gmpopenh264.enabled",false);
+pref("plugins.notifyMissingFlash", false);
+/* See https://bugzilla.redhat.com/show_bug.cgi?id=1226489 */
+pref("browser.display.use_system_colors", false);
+pref("layers.use-image-offscreen-surfaces", false);
+/* Allow sending credetials to all https:// sites */
+pref("network.negotiate-auth.trusted-uris", "https://");
+pref("spellchecker.dictionary_path","/usr/share/myspell");
+pref("browser.uiCustomization.state",'{"placements":{"widget-overflow-fixed-list":[],"PersonalToolbar":["personal-bookmarks"],"nav-bar":["back-button","forward-button","stop-reload-button","home-button","urlbar-container","downloads-button","library-button","sidebar-button","disable-html5-autoplay_afnankhan-browser-action","savepage-we_dw-dev-browser-action","ublock0_raymondhill_net-browser-action","_7b1bf0b6-a1b9-42b0-b75d-252036438bdc_-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"]},"seen":["disable-html5-autoplay_afnankhan-browser-action","savepage-we_dw-dev-browser-action","ublock0_raymondhill_net-browser-action","_7b1bf0b6-a1b9-42b0-b75d-252036438bdc_-browser-action","developer-button"],"dirtyAreaCache":["PersonalToolbar","nav-bar","toolbar-menubar","TabsToolbar"],"currentVersion":14,"newElementCount":2}');
+pref("extensions.webextensions.uuids",'{"formautofill@mozilla.org":"a2e3d4dc-b2f2-4ef2-a3f0-6f8abeebf566","webcompat@mozilla.org":"7f5fbf14-c714-4480-8b8e-b23518572ae3","screenshots@mozilla.org":"5e62461f-01c5-45c1-b2fb-6d08aacc629e","{7b1bf0b6-a1b9-42b0-b75d-252036438bdc}":"77468003-f5ee-4ba6-b61f-b3c4eed3676b","disable-html5-autoplay@afnankhan":"f4d170fd-4d88-4865-9d79-c4f0296d1608","savepage-we@DW-dev":"a049a530-2b55-4e56-924c-19ba00420ad4","uBlock0@raymondhill.net":"d1830386-9c95-407a-b1e9-079db35c7da0"}');
+pref("distribution.fedora.bookmarksProcessed","false");
+FOE
+
+# darkmode
+cat >> /usr/bin/darkmode << FOE
+#!/bin/bash
+
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.builder night-mode 'true'
+gsettings set org.gnome.builder.editor style-scheme-name 'builder-dark'
+gsettings set org.gnome.gedit.preferences.editor scheme 'builder-dark'
+gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'dark'
+FOE
+
+chmod +x /usr/bin/darkmode
+
+# lightmode
+cat >> /usr/bin/lightmode << FOE
+#!/bin/bash
+
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.builder night-mode 'false'
+gsettings set org.gnome.builder.editor style-scheme-name 'builder'
+gsettings set org.gnome.gedit.preferences.editor scheme 'classic'
+gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'light'
+FOE
+
+chmod +x /usr/bin/lightmode
 
 %end
 
