@@ -284,6 +284,7 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	
 	# gimp plugin
 	gimp
+	gimpfx-foundry
 	gimp-paint-studio
 	gimp-dds-plugin 
 	gimp-fourier-plugin 
@@ -298,7 +299,6 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	gimp-save-for-web
 	gimp-separate+
 	gimp-wavelet-decompose
-	gimpfx-foundry
 	gmic-gimp
 
 ###########################
@@ -1231,6 +1231,148 @@ gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'light'
 FOE
 
 chmod +x /usr/bin/lightmode
+
+# GIMP
+mkdir -p /etc/skel/.config/GIMP/2.10
+cat >> /etc/skel/.config/GIMP/2.10/sessionrc << FOE
+# GIMP sessionrc
+#
+# This file takes session-specific info (that is info, you want to keep
+# between two GIMP sessions).  You are not supposed to edit it manually, but
+# of course you can do.  The sessionrc will be entirely rewritten every time
+# you quit GIMP.  If this file isn't found, defaults are used.
+
+(session-info "toplevel"
+    (factory-entry "gimp-empty-image-window")
+    (position 200 100)
+    (size 640 480))
+(session-info "toplevel"
+    (factory-entry "gimp-single-image-window")
+    (position 0 27)
+    (size 1366 834)
+    (open-on-exit)
+    (aux-info
+        (left-docks-width "375")
+        (right-docks-width "209")
+        (maximized "yes"))
+    (gimp-toolbox
+        (side left))
+    (gimp-dock
+        (side left)
+        (position 83)
+        (book
+            (current-page 7)
+            (dockable "gimp-tool-options"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-device-status"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-undo-history"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-image-list"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-brush-grid"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-pattern-grid"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-font-list"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-document-list"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))))
+    (gimp-dock
+        (side right)
+        (book
+            (current-page 0)
+            (dockable "gimp-layer-list"
+                (tab-style automatic)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-channel-list"
+                (tab-style automatic)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-vectors-list"
+                (tab-style automatic)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true"))))))
+(session-info "toplevel"
+    (factory-entry "gimp-preferences-dialog")
+    (position 400 53)
+    (size 752 678))
+
+(hide-docks no)
+(single-window-mode yes)
+(show-tabs yes)
+(tabs-position 0)
+(last-tip-shown 0)
+
+# end of sessionrc
+FOE
+
+cat >> /etc/skel/.config/GIMP/2.10/themerc << FOE
+# GIMP themerc
+#
+# This file is written on GIMP startup and on every theme change.
+# It is NOT supposed to be edited manually. Edit your personal
+
+include "/usr/share/gimp/2.0/themes/System/gtkrc"
+
+# end of themerc
+FOE
+
+cat >> /etc/skel/.config/GIMP/2.10/gimprc << FOE
+# GIMP gimprc
+#
+# This is your personal gimprc file.  Any variable defined in this file takes
+# precedence over the value defined in the system-wide gimprc:
+# /etc/gimp/2.0/gimprc
+# Most values can be set within GIMP by changing some options in the
+# Preferences dialog.
+
+(undo-preview-size medium)
+(layer-preview-size small)
+(import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder")
+(monitor-xresolution 120.000000)
+(monitor-yresolution 122.000000)
+(navigation-preview-size small)
+(theme "System")
+(icon-theme "Legacy")
+(fill-options
+    (style solid)
+    (antialias yes))
+(stroke-options
+    (style solid)
+    (antialias yes)
+    (method line)
+    (width 6.000000)
+    (unit pixels)
+    (cap-style butt)
+    (join-style miter)
+    (miter-limit 10.000000)
+    (dash-offset 0.000000)
+    (dash-info 0)
+    (emulate-brush-dynamics no))
+
+# end of gimprc
+FOE
 
 %end
 
