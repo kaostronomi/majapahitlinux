@@ -176,8 +176,8 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	seahorse
 	seahorse-sharing
 
-	# theme for libre office
-	breeze-gtk
+	# icon for libre office
+    breeze-icon-theme
 
 	# compress
 	lzma
