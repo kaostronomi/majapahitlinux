@@ -773,7 +773,6 @@ sync-passwords-enabled=true
 
 [org.gnome.desktop.datetime]
 automatic-timezone=true
-
 FOE
 
 rm /usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override
@@ -782,7 +781,6 @@ cat >> /usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override << FO
 [org.gnome.login-screen]
 logo='/usr/share/majapahit-logos/majapahit-gdm-logo.svg'
 enable-smartcard-authentication=false
-
 FOE
 
 # rebuild scheme
@@ -811,7 +809,6 @@ alias dif="sudo dnf info"
 alias dx="sudo dnf autoremove"
 # dnf search
 alias ds="sudo dnf search"
-
 FOE
 
 # .bash_profile
@@ -820,7 +817,6 @@ cat >> /etc/skel/.bash_profile << FOE
 if [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
-
 FOE
 
 # .tmux.conf
@@ -832,7 +828,6 @@ bind r source-file ~/.tmux.conf \; display "Reloaded config"
 # Split
 bind V split-window -h
 bind H split-window
-
 FOE
 
 # .config/mimeapps.list
@@ -851,7 +846,6 @@ application/octet-stream=org.gnome.gedit.desktop
 text/html=org.gnome.Epiphany.desktop;org.gnome.gedit.desktop
 application/x-java-keystore=org.gnome.gedit.desktop
 application/xml=org.gnome.gedit.desktop
-
 FOE
 
 # vim
@@ -944,7 +938,6 @@ if has('persistent_undo')
     set undolevels=1000
     set undoreload=10000
 endif
-
 FOE
 
 # copy skel to root
@@ -1026,13 +1019,6 @@ chmod +x /usr/bin/lightmode
 # GIMP
 mkdir -p /etc/skel/.config/GIMP/2.10
 cat >> /etc/skel/.config/GIMP/2.10/sessionrc << FOE
-# GIMP sessionrc
-#
-# This file takes session-specific info (that is info, you want to keep
-# between two GIMP sessions).  You are not supposed to edit it manually, but
-# of course you can do.  The sessionrc will be entirely rewritten every time
-# you quit GIMP.  If this file isn't found, defaults are used.
-
 (session-info "toplevel"
     (factory-entry "gimp-empty-image-window")
     (position 200 100)
@@ -1114,30 +1100,13 @@ cat >> /etc/skel/.config/GIMP/2.10/sessionrc << FOE
 (show-tabs yes)
 (tabs-position 0)
 (last-tip-shown 0)
-
-# end of sessionrc
 FOE
 
 cat >> /etc/skel/.config/GIMP/2.10/themerc << FOE
-# GIMP themerc
-#
-# This file is written on GIMP startup and on every theme change.
-# It is NOT supposed to be edited manually. Edit your personal
-
 include "/usr/share/gimp/2.0/themes/System/gtkrc"
-
-# end of themerc
 FOE
 
 cat >> /etc/skel/.config/GIMP/2.10/gimprc << FOE
-# GIMP gimprc
-#
-# This is your personal gimprc file.  Any variable defined in this file takes
-# precedence over the value defined in the system-wide gimprc:
-# /etc/gimp/2.0/gimprc
-# Most values can be set within GIMP by changing some options in the
-# Preferences dialog.
-
 (undo-preview-size medium)
 (layer-preview-size small)
 (import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder")
@@ -1161,8 +1130,6 @@ cat >> /etc/skel/.config/GIMP/2.10/gimprc << FOE
     (dash-offset 0.000000)
     (dash-info 0)
     (emulate-brush-dynamics no))
-
-# end of gimprc
 FOE
 
 %end
