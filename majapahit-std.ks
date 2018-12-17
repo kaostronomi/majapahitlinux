@@ -721,6 +721,12 @@ sed -i -e 's/Fedora/Majapahit OS/g' /etc/fedora-release /etc/issue /etc/issue.ne
 # plymouthd
 sed -i 's/^Theme=.*/Theme=majapahit/' /usr/share/plymouth/plymouthd.defaults /etc/plymouth/plymouthd.conf
 
+# add favourite menus for "standard"
+cat >> /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override << FOE
+[org.gnome.shell]
+favorite-apps=['org.gnome.Epiphany.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Software.desktop', 'anaconda.desktop']
+FOE
+
 # rebuild schema 
 glib-compile-schemas /usr/share/glib-2.0/schemas
 

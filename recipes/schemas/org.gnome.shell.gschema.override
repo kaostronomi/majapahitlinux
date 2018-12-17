@@ -1,5 +1,4 @@
 [org.gnome.shell]
-favorite-apps=['org.gnome.Epiphany.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Terminal.desktop', 'anjuta.desktop', 'glade.desktop', 'org.gnome.Builder.desktop', 'anaconda.desktop']
 enabled-extensions=['background-logo@fedorahosted.org', 'suspend-button@laserb', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'disconnect-wifi@kgshank.net']
 
 [org.gnome.desktop.interface]
@@ -84,3 +83,5 @@ sync-passwords-enabled=true
 
 [org.gnome.desktop.datetime]
 automatic-timezone=true
+
+
