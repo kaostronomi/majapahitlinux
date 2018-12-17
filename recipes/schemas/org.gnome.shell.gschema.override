@@ -1,5 +1,5 @@
 [org.gnome.shell]
-enabled-extensions=['background-logo@fedorahosted.org', 'suspend-button@laserb', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'disconnect-wifi@kgshank.net']
+enabled-extensions=['suspend-button@laserb', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'disconnect-wifi@kgshank.net', 'background-logo@fedorahosted.org']
 
 [org.gnome.desktop.interface]
 gtk-theme='Adwaita-dark'
@@ -33,7 +33,6 @@ two-finger-scrolling-enabled=true
 tap-to-click=true
 
 [org.gnome.desktop.wm.preferences]
-button-layout='appmenu:minimize,maximize,close'
 titlebar-font='Cantarell Bold 10'
 
 [org.gnome.desktop.media-handling]
@@ -61,6 +60,12 @@ logo-file='/usr/share/majapahit-logos/majapahit_lightbackground.svg'
 
 [org.gnome.shell.extensions.suspend-button]
 suspend-default=true
+
+[org.gnome.shell.extensions.activities-config]
+activities-config-button-no-icon=true
+activities-config-button-text='Majapahit
+panel-background-color-hex-rgb='#2E3436'
+transparent-panel=80
 
 [org.gnome.gedit.preferences.editor]
 display-line-numbers=true

@@ -1,6 +1,6 @@
-#  ╔╦╗╔═╗ ╦╔═╗╔═╗╔═╗╦ ╦╦╔╦╗  ╔═╗╔═╗
-#  ║║║║ ║ ║║ ║╠═╝╠═╣╠═╣║ ║───║ ║╚═╗
-#  ╩ ╩╚═╝╚╝╚═╝╩  ╩ ╩╩ ╩╩ ╩   ╚═╝╚═╝
+#  ╔╦╗╔═╗ ╦╔═╗╔═╗╔═╗╦ ╦╦╔╦╗
+#  ║║║╠═╣ ║╠═╣╠═╝╠═╣╠═╣║ ║
+#  ╩ ╩╩ ╩╚╝╩ ╩╩  ╩ ╩╩ ╩╩ ╩
 
 # versi 1 : standard
 # size original : 7498 + 500
@@ -138,7 +138,7 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
     gnome-todo
 	gnome-nettool
     gnome-tweaks
-    -gnome-boxes
+    gnome-boxes
 	gnome-shell-extension-pomodoro
     gnome-shell-extension-suspend-button
     gnome-shell-extension-disconnect-wifi
@@ -515,11 +515,11 @@ fi
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # set up auto-login
-#cat > /etc/gdm/custom.conf << FOE
-#[daemon]
-#AutomaticLoginEnable=True
-#AutomaticLogin=liveuser
-#FOE
+cat > /etc/gdm/custom.conf << FOE
+[daemon]
+AutomaticLoginEnable=True
+AutomaticLogin=liveuser
+FOE
 
 # Turn off PackageKit-command-not-found while uninstalled
 if [ -f /etc/PackageKit/CommandNotFound.conf ]; then
@@ -647,7 +647,6 @@ touch /etc/machine-id
 %end
 
 %post --nochroot
-# --nochroot is copy from local
 
 # majapahit-linux welcome
 cp -fr recipes/anaconda/gnome/ $INSTALL_ROOT/usr/share/anaconda/

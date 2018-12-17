@@ -1,6 +1,6 @@
-#  ╔╦╗╔═╗ ╦╔═╗╔═╗╔═╗╦ ╦╦╔╦╗  ╔═╗╔═╗
-#  ║║║║ ║ ║║ ║╠═╝╠═╣╠═╣║ ║───║ ║╚═╗
-#  ╩ ╩╚═╝╚╝╚═╝╩  ╩ ╩╩ ╩╩ ╩   ╚═╝╚═╝
+#  ╔╦╗╔═╗ ╦╔═╗╔═╗╔═╗╦ ╦╦╔╦╗
+#  ║║║╠═╣ ║╠═╣╠═╝╠═╣╠═╣║ ║
+#  ╩ ╩╩ ╩╚╝╩ ╩╩  ╩ ╩╩ ╩╩ ╩
 
 # versi 2 : developer
 # size original : 10242 + 500
@@ -725,11 +725,11 @@ fi
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # set up auto-login
-#cat > /etc/gdm/custom.conf << FOE
-#[daemon]
-#AutomaticLoginEnable=True
-#AutomaticLogin=liveuser
-#FOE
+cat > /etc/gdm/custom.conf << FOE
+[daemon]
+AutomaticLoginEnable=True
+AutomaticLogin=liveuser
+FOE
 
 # Turn off PackageKit-command-not-found while uninstalled
 if [ -f /etc/PackageKit/CommandNotFound.conf ]; then
@@ -857,7 +857,6 @@ touch /etc/machine-id
 %end
 
 %post --nochroot
-# --nochroot is copy from local
 
 # majapahit-linux welcome
 cp -fr recipes/anaconda/gnome/ $INSTALL_ROOT/usr/share/anaconda/

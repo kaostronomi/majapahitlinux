@@ -1,6 +1,5 @@
 [org.gnome.shell:GNOME-Classic]
-favorite-apps=['org.gnome.Epiphany.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Terminal.desktop', 'anjuta.desktop', 'glade.desktop', 'org.gnome.Builder.desktop', 'anaconda.desktop']
-enabled-extensions=['background-logo@fedorahosted.org', 'suspend-button@laserb', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'disconnect-wifi@kgshank.net']
+enabled-extensions=['suspend-button@laserb', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'disconnect-wifi@kgshank.net', 'background-logo@fedorahosted.org']
 
 [org.gnome.desktop.interface:GNOME-Classic]
 gtk-theme='Adwaita-dark'
@@ -63,6 +62,12 @@ logo-file='/usr/share/majapahit-logos/majapahit_lightbackground.svg'
 [org.gnome.shell.extensions.suspend-button:GNOME-Classic]
 suspend-default=true
 
+[org.gnome.shell.extensions.activities-config:GNOME-Classic]
+activities-config-button-no-icon=true
+activities-config-button-text='Majapahit
+panel-background-color-hex-rgb='#2E3436'
+transparent-panel=80
+
 [org.gnome.gedit.preferences.editor:GNOME-Classic]
 display-line-numbers=true
 display-overview-map=true
@@ -88,9 +93,8 @@ automatic-timezone=true
 [org.gnome.mutter:GNOME-Classic]
 dynamic-workspaces=false
 
-[org.gnome.desktop.wm.preferences:GNOME-Classic]
-button-layout='appmenu:minimize,maximize,close'
-
 [org.gnome.desktop.wm.keybindings:GNOME-Classic]
 switch-applications=[]
 switch-windows=['<Super>Tab','<Alt>Tab']
+
+
