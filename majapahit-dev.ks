@@ -271,6 +271,9 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	vinagre
 	vino
 
+    # bootable
+    gnome-multi-writer
+
 # UI/UX
 
 	# inkscape plugin
