@@ -1,0 +1,6 @@
+#!/bin/bash
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.builder night-mode 'false'
+gsettings set org.gnome.builder.editor style-scheme-name 'builder'
+gsettings set org.gnome.gedit.preferences.editor scheme 'classic'
+gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'light'

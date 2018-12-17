@@ -305,10 +305,6 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
 %post
 
-echo "######################################";
-echo "#######     READY FOR POST    ########";
-echo "######################################";
-
 cat >> /etc/rc.d/init.d/livesys << EOF
 #!/bin/bash
 #
@@ -648,498 +644,10 @@ rm -f /boot/*-rescue*
 rm -f /etc/machine-id
 touch /etc/machine-id
 
-# set generic logo to majapahit os
-sed -i -e 's/Generic/Majapahit OS/g' /etc/fedora-release /etc/issue /etc/issue.net
-sed -i -e 's/Fedora/Majapahit OS/g' /etc/fedora-release /etc/issue /etc/issue.net
-
-cat >/etc/os-release << EOF
-NAME=Majapahit
-VERSION="29 (Twenty Nine)"
-ID="majapahit"
-VERSION_ID=29
-PRETTY_NAME="Majapahit 29 (Twenty Nine)"
-ANSI_COLOR="0;34"
-CPE_NAME="cpe:/o:majapahitlinux:majapahit:1"
-HOME_URL="https://www.majapahitlinux.org/"
-SUPPORT_URL="https://www.majapahitlinux.org/support/"
-BUG_REPORT_URL="https://bug.majapahitlinux.org/"
-REDHAT_BUGZILLA_PRODUCT="Majapahit"
-REDHAT_BUGZILLA_PRODUCT_VERSION=29
-REDHAT_SUPPORT_PRODUCT="Majapahit"
-REDHAT_SUPPORT_PRODUCT_VERSION=29
-PRIVACY_POLICY_URL="https://www.majapahitlinux.org/privacy/"
-EOF
-
-# Add link to majapahit linux
-cat >> /usr/share/applications/majapahit.desktop << FOE
-[Desktop Entry]
-Name=Majapahit Homepage
-GenericName=Majapahit Homepage
-Comment=Reference of Majapahit
-Exec=xdg-open https://www.majapahitlinux.org/
-Type=Application
-Icon=fedora-logo-icon
-Categories=Network;GNOME;GTK;WebBrowser;
-FOE
-chmod a+x /usr/share/applications/majapahit.desktop
-
-# GNOME Setting
-rm /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override
-cat >> /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override << FOE
-[org.gnome.shell]
-favorite-apps=['org.gnome.Epiphany.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Terminal.desktop', 'inkscape.desktop', 'gimp.desktop', 'libreoffice-writer.desktop', 'anaconda.desktop']
-enabled-extensions=['background-logo@fedorahosted.org', 'suspend-button@laserb', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'disconnect-wifi@kgshank.net', 'user-theme@gnome-shell-extensions.gcampax.github.com']
-
-[org.gnome.desktop.interface]
-gtk-theme='Adwaita-dark'
-icon-theme='Adwaita'
-cursor-theme='Adwaita'
-monospace-font-name='Monospace 10'
-font-name='Cantarell 10'
-document-font-name='Sans 10'
-clock-show-date=true
-clock-show-seconds=true
-show-battery-percentage=true
-
-[org.gnome.shell.extensions.user-theme]
-name=''
-
-[org.gnome.desktop.background]
-picture-uri='file:///usr/share/backgrounds/arjuna/default/arjuna.xml'
-
-[org.gnome.desktop.screensaver]
-picture-uri='file:///usr/share/backgrounds/arjuna/default/arjuna.xml'
-
-[org.gnome.nautilus.icon-view]
-default-zoom-level='standard'
-
-[org.gtk.Settings.FileChooser]
-sort-directories-first=true
-
-[org.gnome.desktop.peripherals.touchpad]
-natural-scroll=true
-two-finger-scrolling-enabled=true
-tap-to-click=true
-
-[org.gnome.desktop.wm.preferences]
-button-layout='appmenu:minimize,maximize,close'
-titlebar-font='Cantarell Bold 10'
-
-[org.gnome.desktop.media-handling]
-autorun-never=true
-
-[org.gnome.settings-daemon.plugins.color]
-night-light-enabled=true
-
-[org.gnome.builder.editor]
-style-scheme-name='builder-dark'
-
-[org.gnome.rhythmbox]
-show-album-art=false
-
-[org.gnome.settings-daemon.plugins.media-keys]
-home='<Super>e'
-www='<Super>w'
-
-[org.fedorahosted.background-logo-extension]
-logo-always-visible=true
-logo-size=12
-logo-border=16
-logo-position='bottom-center'
-logo-file='/usr/share/majapahit-logos/majapahit_lightbackground.svg'
-
-
-[org.gnome.shell.extensions.suspend-button]
-suspend-default=true
-
-[org.gnome.gedit.preferences.editor]
-display-line-numbers=true
-display-overview-map=true
-insert-spaces=true
-scheme='builder-dark'
-
-[org.gnome.Epiphany]
-enable-smooth-scrolling=true
-
-[org.gnome.Epiphany.ui]
-tabs-bar-visibility-policy='always'
-
-[org.gnome.Epiphany.state]
-is-maximized=true
-
-[org.gnome.Epiphany.sync]
-sync-history-enabled=true
-sync-passwords-enabled=true
-
-[org.gnome.desktop.datetime]
-automatic-timezone=true
-FOE
-
-rm /usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override
-cat >> /usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override << FOE
-
-[org.gnome.login-screen]
-logo='/usr/share/majapahit-logos/majapahit-gdm-logo.svg'
-enable-smartcard-authentication=false
-FOE
-
-# rebuild scheme
-
-# ETC/SKEL
-
-# .bashrc
-cat >> /etc/skel/.bashrc << FOE
-
-#youtube-dl
-alias yt="youtube-dl -if webm+bestaudio"
-#youtube-dl playlist
-alias ytp="youtube-dl -Atif webm+bestaudio"
-#youtube-dl music only
-alias ytm="youtube-dl -if bestaudio"
-
-# dnf update
-alias da="sudo dnf update"
-# dnf install
-alias di="sudo dnf install"
-# dnf remove
-alias dr="sudo dnf remove"
-# dnf info
-alias dif="sudo dnf info"
-# dnf autoremove
-alias dx="sudo dnf autoremove"
-# dnf search
-alias ds="sudo dnf search"
-FOE
-
-# .bash_profile
-cat >> /etc/skel/.bash_profile << FOE
-# Tmux
-if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
-FOE
-
-# .tmux.conf
-cat >> /etc/skel/.tmux.conf << FOE
-
-# Reloaded
-bind r source-file ~/.tmux.conf \; display "Reloaded config"
-
-# Split
-bind V split-window -h
-bind H split-window
-FOE
-
-# .config/mimeapps.list
-mkdir /etc/skel/.config/
-cat >> /etc/skel/.config/mimeapps.list << FOE
-[Default Applications]
-x-scheme-handler/mailto=org.gnome.Evolution.desktop
-text/plain=org.gnome.gedit.desktop
-text/html=org.gnome.Epiphany.desktop
-application/xml=org.gnome.gedit.desktop
-
-[Added Associations]
-x-scheme-handler/mailto=org.gnome.Evolution.desktop;
-text/plain=org.gnome.gedit.desktop;
-application/octet-stream=org.gnome.gedit.desktop
-text/html=org.gnome.Epiphany.desktop;org.gnome.gedit.desktop
-application/x-java-keystore=org.gnome.gedit.desktop
-application/xml=org.gnome.gedit.desktop
-FOE
-
-# vim
-mkdir /etc/skel/.vim
-mkdir /etc/skel/.vim/undo
-mkdir /etc/skel/.vim/backup
-mkdir /etc/skel/.vim/plugged
-mkdir /etc/skel/.vim/autoload
-
-cat >> /etc/skel/.vimrc << FOE
-filetype plugin indent on
-syntax on
-set nocompatible
-set hidden
-set number
-set background=dark
-set cursorline
-set history=1000
-set undolevels=1000
-set title
-set showmode
-set showcmd
-set mouse=a
-set relativenumber
-set path+=**
-set wildmenu
-set ttimeoutlen=50
-set textwidth=0
-set colorcolumn=
-set backspace=indent,eol,start
-set autoread
-set ignorecase
-set laststatus=2
-set statusline=%f
-set statusline+=%y
-set noerrorbells
-set nowrap
-set expandtab
-set smarttab
-set autoindent
-set smartindent
-set sw=4 sts=4 ts=4 "shiftwidth softtabstop tabstop
-set t_Co=256
-hi  clear ModeMsg " disable color statusline on insert mode and visual mode
-
-let mapleader=","
-
-" move the window
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" navigation (insert mode)
-inoremap <A-h> <Esc>i
-inoremap <A-j> <Esc>ja
-inoremap <A-k> <Esc>ka
-inoremap <A-l> <Esc>la
-
-" move the window (insert mode)
-inoremap <C-h> <Esc><C-w>ha
-inoremap <C-j> <Esc><C-w>ja
-inoremap <C-k> <Esc><C-w>ka
-inoremap <C-l> <Esc><C-w>la
-
-" quick restart vimrc
-nnoremap <silent> <leader>r :source $MYVIMRC<CR>
-
-" open vimrc
-nnoremap <silent> <leader>ev :e ~/.vimrc<CR>
-
-" backup 
-set noswapfile
-set backup
-set backupdir=~/.vim/backup,~/.backup,~/backup,/var/backup,/backup
-set backupskip=/backup/*,/private/backup/*
-set directory=~/.vim/backup,~/.backup,~/backup,/var/backup,/backup
-set writebackup
-
-" split window
-" horizontal split
-nnoremap <silent> <leader>- :sp <CR>
-" vertical split
-nnoremap <silent> <leader>\ :vsp <CR><C-w>l<CR>
-
-" turn on persistent undo
-if has('persistent_undo')
-    set undodir=~/.vim/undo//
-    set undofile
-    set undolevels=1000
-    set undoreload=10000
-endif
-FOE
-
-# copy skel to root
-cp -fr /etc/skel/* /root
-
-# copy skel to root (hidden files)
-cp -fr /etc/skel/.[^.]* /root
-
-# plymouthd
-sed -i 's/^Theme=.*/Theme=majapahit/' /usr/share/plymouth/plymouthd.defaults /etc/plymouth/plymouthd.conf
-
-# firefox seting, if install
-mkdir -p /usr/lib64/firefox/browser/defaults/preferences/
-rm /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js
-cat >> /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js << FOE
-pref("app.update.auto",                     false);
-pref("app.update.enabled",                  false);
-pref("app.update.autoInstallEnabled",       false);
-pref("general.smoothScroll",                true);
-pref("intl.locale.matchOS",                 true);
-pref("intl.locale.requested",               "");
-pref("toolkit.storage.synchronous",         0);
-pref("toolkit.networkmanager.disable",      false);
-pref("offline.autoDetect",                  true);
-pref("browser.backspace_action",            2);
-pref("browser.display.use_system_colors",   true);
-pref("browser.download.folderList",         1);
-pref("browser.link.open_external",          3);
-pref("browser.shell.checkDefaultBrowser",   false);
-pref("network.manage-offline-status",       true);
-pref("extensions.shownSelectionUI",         true);
-pref("ui.SpellCheckerUnderlineStyle",       1);
-pref("startup.homepage_override_url",       "");
-/* pref("browser.startup.homepage",            "data:text/plain,browser.startup.homepage=http://start.fedoraproject.org/"); */
-/* pref("browser.newtabpage.pinned",           '[{"url":"http://start.fedoraproject.org/","title":"Fedora Project - Start Page"}]'); */
-pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
-pref("media.gmp-gmpopenh264.provider.enabled",false);
-pref("media.gmp-gmpopenh264.autoupdate",false);
-pref("media.gmp-gmpopenh264.enabled",false);
-pref("media.gmp-gmpopenh264.enabled",false);
-pref("plugins.notifyMissingFlash", false);
-/* See https://bugzilla.redhat.com/show_bug.cgi?id=1226489 */
-pref("browser.display.use_system_colors", false);
-pref("layers.use-image-offscreen-surfaces", false);
-/* Allow sending credetials to all https:// sites */
-pref("network.negotiate-auth.trusted-uris", "https://");
-pref("spellchecker.dictionary_path","/usr/share/myspell");
-pref("browser.uiCustomization.state",'{"placements":{"widget-overflow-fixed-list":[],"PersonalToolbar":["personal-bookmarks"],"nav-bar":["back-button","forward-button","stop-reload-button","home-button","urlbar-container","downloads-button","library-button","sidebar-button","disable-html5-autoplay_afnankhan-browser-action","savepage-we_dw-dev-browser-action","ublock0_raymondhill_net-browser-action","_7b1bf0b6-a1b9-42b0-b75d-252036438bdc_-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"]},"seen":["disable-html5-autoplay_afnankhan-browser-action","savepage-we_dw-dev-browser-action","ublock0_raymondhill_net-browser-action","_7b1bf0b6-a1b9-42b0-b75d-252036438bdc_-browser-action","developer-button"],"dirtyAreaCache":["PersonalToolbar","nav-bar","toolbar-menubar","TabsToolbar"],"currentVersion":14,"newElementCount":2}');
-pref("extensions.webextensions.uuids",'{"formautofill@mozilla.org":"a2e3d4dc-b2f2-4ef2-a3f0-6f8abeebf566","webcompat@mozilla.org":"7f5fbf14-c714-4480-8b8e-b23518572ae3","screenshots@mozilla.org":"5e62461f-01c5-45c1-b2fb-6d08aacc629e","{7b1bf0b6-a1b9-42b0-b75d-252036438bdc}":"77468003-f5ee-4ba6-b61f-b3c4eed3676b","disable-html5-autoplay@afnankhan":"f4d170fd-4d88-4865-9d79-c4f0296d1608","savepage-we@DW-dev":"a049a530-2b55-4e56-924c-19ba00420ad4","uBlock0@raymondhill.net":"d1830386-9c95-407a-b1e9-079db35c7da0"}');
-pref("distribution.fedora.bookmarksProcessed","false");
-FOE
-
-# darkmode
-cat >> /usr/bin/darkmode << FOE
-#!/bin/bash
-
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-gsettings set org.gnome.builder night-mode 'true'
-gsettings set org.gnome.builder.editor style-scheme-name 'builder-dark'
-gsettings set org.gnome.gedit.preferences.editor scheme 'builder-dark'
-gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'dark'
-FOE
-
-chmod +x /usr/bin/darkmode
-
-# lightmode
-cat >> /usr/bin/lightmode << FOE
-#!/bin/bash
-
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-gsettings set org.gnome.builder night-mode 'false'
-gsettings set org.gnome.builder.editor style-scheme-name 'builder'
-gsettings set org.gnome.gedit.preferences.editor scheme 'classic'
-gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'light'
-FOE
-
-chmod +x /usr/bin/lightmode
-
-# GIMP
-mkdir -p /etc/skel/.config/GIMP/2.10
-cat >> /etc/skel/.config/GIMP/2.10/sessionrc << FOE
-(session-info "toplevel"
-    (factory-entry "gimp-empty-image-window")
-    (position 200 100)
-    (size 640 480))
-(session-info "toplevel"
-    (factory-entry "gimp-single-image-window")
-    (position 0 27)
-    (size 1366 834)
-    (open-on-exit)
-    (aux-info
-        (left-docks-width "375")
-        (right-docks-width "209")
-        (maximized "yes"))
-    (gimp-toolbox
-        (side left))
-    (gimp-dock
-        (side left)
-        (position 83)
-        (book
-            (current-page 7)
-            (dockable "gimp-tool-options"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-device-status"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-undo-history"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-image-list"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-brush-grid"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-pattern-grid"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-font-list"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-document-list"
-                (tab-style automatic)
-                (aux-info
-                    (show-button-bar "true")))))
-    (gimp-dock
-        (side right)
-        (book
-            (current-page 0)
-            (dockable "gimp-layer-list"
-                (tab-style automatic)
-                (preview-size 32)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-channel-list"
-                (tab-style automatic)
-                (preview-size 32)
-                (aux-info
-                    (show-button-bar "true")))
-            (dockable "gimp-vectors-list"
-                (tab-style automatic)
-                (preview-size 32)
-                (aux-info
-                    (show-button-bar "true"))))))
-(session-info "toplevel"
-    (factory-entry "gimp-preferences-dialog")
-    (position 400 53)
-    (size 752 678))
-
-(hide-docks no)
-(single-window-mode yes)
-(show-tabs yes)
-(tabs-position 0)
-(last-tip-shown 0)
-FOE
-
-cat >> /etc/skel/.config/GIMP/2.10/themerc << FOE
-include "/usr/share/gimp/2.0/themes/System/gtkrc"
-FOE
-
-cat >> /etc/skel/.config/GIMP/2.10/gimprc << FOE
-(undo-preview-size medium)
-(layer-preview-size small)
-(import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder")
-(monitor-xresolution 120.000000)
-(monitor-yresolution 122.000000)
-(navigation-preview-size small)
-(theme "System")
-(icon-theme "Legacy")
-(fill-options
-    (style solid)
-    (antialias yes))
-(stroke-options
-    (style solid)
-    (antialias yes)
-    (method line)
-    (width 6.000000)
-    (unit pixels)
-    (cap-style butt)
-    (join-style miter)
-    (miter-limit 10.000000)
-    (dash-offset 0.000000)
-    (dash-info 0)
-    (emulate-brush-dynamics no))
-FOE
-
 %end
 
 %post --nochroot
 # --nochroot is copy from local
-
-echo "###############################################";
-echo "#######     READY FOR POST NOCHROOT    ########";
-echo "###############################################";
 
 # majapahit-linux welcome
 cp -fr recipes/anaconda/gnome/ $INSTALL_ROOT/usr/share/anaconda/
@@ -1175,9 +683,43 @@ rm -fr $INSTALL_ROOT/usr/share/doc/fedora-release-notes/
 rm -fr $INSTALL_ROOT/usr/share/applications/fedora-release-notes.desktop
 rm -fr $INSTALL_ROOT/usr/share/applications/fedora-release-notes.webapp.desktop
 
+# copy skel to etc and root
+cp -fr recipes/skel/ $INSTALL_ROOT/etc/
+# ln -s skel/ root
+cp -fr recipes/root/ $INSTALL_ROOT/
+
+# copy bin to /usr/bin
+cp -fr recipes/bin/ $INSTALL_ROOT/usr/
+
+# copy firefox setting
+cp -fr recipes/firefox/ $INSTALL_ROOT/usr/lib64/
+
+# copy majapahit link
+cp -fr recipes/applications/ $INSTALL_ROOT/usr/share/
+
+# branding for standard
+cp -fr recipes/branding/etc / $INSTALL_ROOT/
+cp -fr recipes/branding/std/os.release.d / $INSTALL_ROOT/usr/lib/
+
+# copy GNOME setting
+cp -fr recipes/schemas/ $INSTALL_ROOT/usr/share/glib-2.0/
+
+# copy general license
+cp -fr $INSTALL_ROOT/usr/share/licenses/*-release/* $LIVE_ROOT/
+
+# copy sample to live user
+cp -fr recipes/Samples/ $LIVE_ROOT/home/liveuser/
+
 %end
 
 %post
+
+# set generic logo to majapahit os
+sed -i -e 's/Generic/Majapahit OS/g' /etc/fedora-release /etc/issue /etc/issue.net
+sed -i -e 's/Fedora/Majapahit OS/g' /etc/fedora-release /etc/issue /etc/issue.net
+
+# plymouthd
+sed -i 's/^Theme=.*/Theme=majapahit/' /usr/share/plymouth/plymouthd.defaults /etc/plymouth/plymouthd.conf
 
 # rebuild schema 
 glib-compile-schemas /usr/share/glib-2.0/schemas

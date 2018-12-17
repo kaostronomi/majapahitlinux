@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Majapahit Homepage
+GenericName=Majapahit Homepage
+Comment=Reference of Majapahit
+Exec=xdg-open https://www.majapahitlinux.org/
+Type=Application
+Icon=fedora-logo-icon
+Categories=Network;GNOME;GTK;WebBrowser;

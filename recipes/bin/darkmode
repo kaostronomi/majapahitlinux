@@ -1,0 +1,6 @@
+#!/bin/bash
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.builder night-mode 'true'
+gsettings set org.gnome.builder.editor style-scheme-name 'builder-dark'
+gsettings set org.gnome.gedit.preferences.editor scheme 'builder-dark'
+gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'dark'
