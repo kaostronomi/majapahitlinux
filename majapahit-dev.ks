@@ -41,11 +41,8 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
     @base-x
     @guest-desktop-agents
-    @standard
     @core
     @fonts
-    @input-methods
-    @dial-up
     @multimedia
     @hardware-support
     @printing
@@ -80,14 +77,8 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 ### MAJAPAHIT WORKSTATION COMMON ###
 ####################################
 
-# Exclude unwanted groups that fedora-live-base.ks pulls in
-#-@dial-up
-#-@input-methods
-#-@standard
-
 # Make sure to sync any additions / removals done here with
 # workstation-product-environment in comps
-    #@firefox
     @gnome-desktop
     @libreoffice
     @networkmanager-submodules
@@ -225,7 +216,6 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 # PRODUCTIVITY
 
 	# browser
-    # epiphany to firefox
 	epiphany
 
 	# office
