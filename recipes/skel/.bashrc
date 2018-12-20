@@ -14,6 +14,14 @@ export PATH
 
 # User specific aliases and functions
 
+# Powerline
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
+
 #youtube-dl
 alias yt="youtube-dl -if webm+bestaudio"
 #youtube-dl playlist
@@ -33,3 +41,6 @@ alias dif="sudo dnf info"
 alias dx="sudo dnf autoremove"
 # dnf search
 alias ds="sudo dnf search"
+
+#sudo su
+alias _="sudo su"

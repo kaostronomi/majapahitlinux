@@ -1,13 +1,13 @@
 [Default Applications]
 x-scheme-handler/mailto=org.gnome.Evolution.desktop
 text/plain=org.gnome.gedit.desktop
-text/html=org.gnome.Epiphany.desktop
+text/html=firefox.desktop
 application/xml=org.gnome.gedit.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=org.gnome.Evolution.desktop;
 text/plain=org.gnome.gedit.desktop;
 application/octet-stream=org.gnome.gedit.desktop
-text/html=org.gnome.Epiphany.desktop;org.gnome.gedit.desktop
+text/html=firefox.desktop;org.gnome.gedit.desktop
 application/x-java-keystore=org.gnome.gedit.desktop
 application/xml=org.gnome.gedit.desktop

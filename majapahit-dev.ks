@@ -15,7 +15,7 @@ firewall --enabled --service=mdns
 xconfig --startxonboot
 zerombr
 clearpart --all
-part / --size 10675 --fstype ext4
+part / --size 11195 --fstype ext4
 services --enabled=NetworkManager,ModemManager --disabled=sshd
 network --bootproto=dhcp --device=link --activate
 rootpw --lock --iscrypted locked
@@ -35,9 +35,7 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
 %packages
 
-#########################
 ### PACKAGE LIVE BASE ###
-#########################
 
     @base-x
     @guest-desktop-agents
@@ -46,9 +44,6 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
     @multimedia
     @hardware-support
     @printing
-    @standard
-    @input-methods
-    @dial-up
 
 # Explicitly specified here:
 # <notting> walters: because otherwise dependency loops cause yum issues.
@@ -76,13 +71,14 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 # anaconda needs the locales available to run for different locales
     glibc-all-langpacks
 
-####################################
 ### MAJAPAHIT WORKSTATION COMMON ###
-####################################
 
 # Make sure to sync any additions / removals done here with
 # workstation-product-environment in comps
+    @firefox
     @gnome-desktop
+    @guest-desktop-agents
+    @hardware-support
     @libreoffice
     @networkmanager-submodules
     @workstation-product
@@ -91,9 +87,7 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
     -gfs2-utils
     -reiserfs-utils
 
-#############################
 ### VERSION 1 COMMON USER ###
-#############################
 
 # REBRANDING
 
@@ -141,11 +135,11 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	# tweak
 	dconf-editor
 
-	## Add cosmetic for gnome-terminal
-	#powerline
-	#powerline-fonts
-	#tmux-powerline
-	#vim-powerline
+	# Add cosmetic for gnome-terminal
+	powerline
+	powerline-fonts
+	tmux-powerline
+	vim-powerline
 
 	# image viewer
 	eog
@@ -219,7 +213,8 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 # PRODUCTIVITY
 
 	# browser
-	epiphany
+    firefox
+    -fedora-bookmarks
 
 	# office
 	libreoffice
@@ -267,6 +262,9 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
     # bootable
     gnome-multi-writer
 
+    # cli editor
+	vim
+    
 # UI/UX
 
 	# inkscape plugin
@@ -294,9 +292,7 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	gimp-wavelet-decompose
 	gmic-gimp
 
-###########################
 ### VERSION 2 DEVELOPER ###
-###########################
 
 # DEVELOPER
 
@@ -304,7 +300,6 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	anjuta
 	gnome-builder
 	glade
-	vim
 	-ninja-ide
 
     # git gui
@@ -854,11 +849,18 @@ touch /etc/machine-id
 # majapahit-linux welcome
 cp -fr recipes/anaconda/gnome/ $INSTALL_ROOT/usr/share/anaconda/
 
+# branding for developer
+cp -fr recipes/branding/etc $INSTALL_ROOT/
+cp -fr recipes/branding/dev/os.release.d $INSTALL_ROOT/usr/lib/
+
 # plymouth theme
 cp -fr recipes/plymouth/ $INSTALL_ROOT/usr/share/
 
 # change artwork anaconda installer
 cp -fr recipes/anaconda/pixmaps/ $INSTALL_ROOT/usr/share/anaconda/
+
+# copy GNOME setting
+cp -fr recipes/schemas/ $INSTALL_ROOT/usr/share/glib-2.0/
 
 # adding icons
 cp -fr recipes/icons/ $INSTALL_ROOT/usr/share/
@@ -878,10 +880,8 @@ cp -fr recipes/licenses/ $INSTALL_ROOT/usr/share/
 # adding majapahit-help
 cp -fr recipes/doc/ $INSTALL_ROOT/usr/share/
 
-# and remove fedora-release doc
+# and remove shortcut fedora-release and doc
 rm -fr $INSTALL_ROOT/usr/share/doc/fedora-release-notes/
-
-# and remove shortcut fedora-release doc
 rm -fr $INSTALL_ROOT/usr/share/applications/fedora-release-notes.desktop
 rm -fr $INSTALL_ROOT/usr/share/applications/fedora-release-notes.webapp.desktop
 
@@ -899,26 +899,27 @@ cp -fr recipes/firefox/ $INSTALL_ROOT/usr/lib64/
 # copy majapahit link
 cp -fr recipes/applications/ $INSTALL_ROOT/usr/share/
 
-# branding for developer
-cp -fr recipes/branding/etc / $INSTALL_ROOT/
-cp -fr recipes/branding/dev/os.release.d / $INSTALL_ROOT/usr/lib/
-
-# copy GNOME setting
-cp -fr recipes/schemas/ $INSTALL_ROOT/usr/share/glib-2.0/
-
 # copy general license
 cp -fr $INSTALL_ROOT/usr/share/licenses/*-release/* $LIVE_ROOT/
 
 # copy sample to live user
-cp -fr recipes/Samples/ $LIVE_ROOT/home/liveuser/
+#cp -fr recipes/Samples/ $LIVE_ROOT/home/liveuser/
+
+# only works on x86, x86_64
+if [ "$(uname -i)" = "i386" -o "$(uname -i)" = "x86_64" ]; then
+  if [ ! -d $LIVE_ROOT/LiveOS ]; then mkdir -p $LIVE_ROOT/LiveOS ; fi
+  cp /usr/bin/livecd-iso-to-disk $LIVE_ROOT/LiveOS
+fi
 
 %end
 
 %post
 
-# set generic logo to majapahit os
-sed -i -e 's/Generic/Majapahit OS/g' /etc/fedora-release /etc/issue /etc/issue.net
-sed -i -e 's/Fedora/Majapahit OS/g' /etc/fedora-release /etc/issue /etc/issue.net
+# branding
+# set generic label to majapahit os
+cat > /etc/fedora-release << EOF
+Majapahit Linux release 29
+EOF
 
 # plymouthd
 sed -i 's/^Theme=.*/Theme=majapahit/' /usr/share/plymouth/plymouthd.defaults /etc/plymouth/plymouthd.conf
@@ -926,7 +927,7 @@ sed -i 's/^Theme=.*/Theme=majapahit/' /usr/share/plymouth/plymouthd.defaults /et
 # add favourite menus for "developer"
 cat >> /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override << FOE
 [org.gnome.shell]
-favorite-apps=['org.gnome.Epiphany.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Builder.desktop', 'anjuta.desktop', 'glade.desktop', 'anaconda.desktop']
+favorite-apps=['firefox.desktop', 'nautilus.desktop', 'org.gnome.Evolution.desktop', 'rhythmbox.desktop', 'org.gnome.Builder.desktop', 'anjuta.desktop', 'glade.desktop', 'anaconda.desktop']
 FOE
 
 # rebuild schema 

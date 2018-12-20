@@ -61,12 +61,6 @@ logo-file='/usr/share/majapahit-logos/majapahit_lightbackground.svg'
 [org.gnome.shell.extensions.suspend-button]
 suspend-default=true
 
-[org.gnome.shell.extensions.activities-config]
-activities-config-button-no-icon=true
-activities-config-button-text='Majapahit
-panel-background-color-hex-rgb='#2E3436'
-transparent-panel=80
-
 [org.gnome.gedit.preferences.editor]
 display-line-numbers=true
 display-overview-map=true
