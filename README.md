@@ -88,4 +88,4 @@ sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
 ![install](img/install.png)
 
 ### Lightmode / Darkmode
-![mode](cast/darklight.gif)
+![mode](cast/dark-light.gif)
