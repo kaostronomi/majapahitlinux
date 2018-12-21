@@ -10,7 +10,7 @@ at least 1 GB of memory (RAM)
 
 ## Download 
 
-The Majapahit linux can be found here: https://osdn.net/projects/majapahit/releases/70404/
+The Majapahit linux can be found here: https://osdn.net/projects/majapahit/releases/70404/ (link is maintenance)
 
 ## 1. Majapahit available in two variants
 
