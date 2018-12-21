@@ -2,6 +2,12 @@
 
 Majapahit is linux based on Fedora.
 
+The computer on which you intend to install Majapahit 29 from the live CD should have:
+
+a DVD or USB drive (4Gib), and the capability to boot from this drive.
+a 1 GHz processor or faster
+at least 1 GB of memory (RAM)
+
 ## 1. Majapahit available in two variants
 
 |Contain| - Standard -| Developer -|
