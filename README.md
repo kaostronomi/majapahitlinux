@@ -53,7 +53,6 @@ https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-2
 #### Download Developer edition :
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-29.1.iso/
 
-
 | Note | Value 
 |:----:|:----:|
 | File Name | Majapahit-Linux-dev-x86_64-29.1.iso |
