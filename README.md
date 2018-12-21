@@ -30,7 +30,7 @@ The computer on which you intend to install Majapahit 29 from the live CD should
 | Ruby |  | `x` |
 | Ruby on rails |  | `x` |
 
-## Download 
+## 2. Download 
 
 ### Standard edition 29.1
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-29.1.iso/
@@ -38,7 +38,7 @@ https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-2
 ### Developer edition 29.1 (maintenance)
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-29.1.iso/
 
-## Example Image writing
+## 3. Example Image writing
 
 ### For Windows
 
@@ -54,7 +54,7 @@ https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-2
 sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
 ```
 
-## 2. Gnome-control-center
+## 4. Gnome-control-center
 
 |Tweaks| > Fedora | > Majapahit|
 |:----:|:----:|:----:|
@@ -67,7 +67,7 @@ sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
 | Plugins : alternate tab | no | yes |
 
 
-## 3. Screenshoot
+## 5. Screenshoot
 
 ### Wallpaper
 ![wallpaper](img/wallpaper.png)
@@ -89,6 +89,8 @@ sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
 
 ### Anaconda installer
 ![install](img/install.png)
+
+## 6. Screencast
 
 ### Lightmode / Darkmode
 ![mode](cast/dark-light.gif)
