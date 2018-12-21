@@ -40,15 +40,23 @@ Majapahit is linux based on Fedora.
 
 ## 3. Screenshoot
 
-### 3.1 Welcome
-![Preview 1](img/1.png)
+### Wallpaper
+![wallpaper](img/wallpaper.png)
 
-### 3.1 Anaconda installer
-![Preview 1](img/2.png)
+### Browser
+![firefox](img/firefox.png)
 
-### 3.3 Wallpaper
-![Preview 1](img/3.png)
+### GIMP
+![gimp](img/gimp.png)
 
-### 3.4 Menu (developer)
+### Music Player
+![rhythmbox](img/rhythmbox.png)
+
+### Welcome
+![welcome](img/welcome.png)
+
+### Anaconda installer
+![install](img/install.png)
+
+### Menu (developer)
 ![Preview 1](img/4.png)
-
