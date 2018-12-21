@@ -1,6 +1,6 @@
 # Majapahit release 29
 
-Majapahit is linux based on Fedora.
+Majapahit is a hobby project based on Fedora Linux.
 
 The computer on which you intend to install Majapahit 29 from the live CD should have:
 
@@ -12,9 +12,25 @@ The computer on which you intend to install Majapahit 29 from the live CD should
 
 The Majapahit linux can be found here: https://osdn.net/projects/majapahit/releases/70404/ (link is maintenance)
 
+## Example Image writing
+
+### For Windows
+
+- [Rufus](https://rufus.ie/en_IE.html "Rufus download") or
+- [LiliUSB](http://www.linuxliveusb.com/en/download "LiliUSB download")
+
+### For Linux
+
+- multiwriter,
+- gnome-multiwriter or
+- use command
+```
+sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
+```
+
 ## 1. Majapahit available in two variants
 
-|Contain| - Standard -| Developer *(still upload)* -|
+|Contain| - Standard -| Developer *still upload* -|
 |:----:|:----:|:----:|
 | RPM-Fusion | `x` | `x` |
 | Codec | `x` | `x` |
