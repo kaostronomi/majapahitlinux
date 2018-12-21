@@ -716,6 +716,7 @@ EOF
 
 # plymouthd
 sed -i 's/^Theme=.*/Theme=majapahit/' /usr/share/plymouth/plymouthd.defaults /etc/plymouth/plymouthd.conf
+sed -i -e 's/charge/majapahit/g' /usr/share/plymouth/themes/charge/charge.plymouth
 
 # add favourite menus for "standard"
 cat >> /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override << FOE
