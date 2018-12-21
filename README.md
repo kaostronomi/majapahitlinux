@@ -14,7 +14,7 @@ The Majapahit linux can be found here: https://osdn.net/projects/majapahit/relea
 
 ## 1. Majapahit available in two variants
 
-|Contain| - Standard -| Developer -|
+|Contain| - Standard -| Developer *(still upload)* -|
 |:----:|:----:|:----:|
 | RPM-Fusion | `x` | `x` |
 | Codec | `x` | `x` |
