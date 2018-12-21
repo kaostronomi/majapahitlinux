@@ -12,23 +12,23 @@ The computer on which you intend to install Majapahit 29 from the live CD should
 
 |Contain| - Standard -| Developer *still upload* -|
 |:----:|:----:|:----:|
-| RPM-Fusion | `x` | `x` |
-| Codec | `x` | `x` |
-| Compression | `x` | `x` |
-| Libreoffice | `x` | `x` |
-| Gimp, Inkscape (+Plugins) | `x` | `x` |
-| Gnome Apps | `x` | `x` |
-| Vino (remote desktop) | `x` | `x` |
-| Gnome-boxes (virtual) | `x` | `x` | 
-| LAMP (Php, Nginx, Mariadb) |  | `x` |
-| C | | `x` |
-| GTK | | `x` |
-| Gnome IDE (Anjuta, Builder, Glade) | | `x` |
-| Python Classroom |  | `x` |
-| Python Science |  | `x` |
-| Django |  | `x` |
-| Ruby |  | `x` |
-| Ruby on rails |  | `x` |
+| RPM-Fusion | yes | yes |
+| Codec | yes | yes |
+| Compression | yes | yes |
+| Libreoffice | yes | yes |
+| Gimp, Inkscape (+Plugins) | yes | yes |
+| Gnome Apps | yes | yes |
+| Vino (remote desktop) | yes | yes |
+| Gnome-boxes (virtual) | yes | yes | 
+| LAMP (Php, Nginx, Mariadb) |  | yes |
+| C | | yes |
+| GTK | | yes |
+| Gnome IDE (Anjuta, Builder, Glade) | | yes |
+| Python Classroom |  | yes |
+| Python Science |  | yes |
+| Django |  | yes |
+| Ruby |  | yes |
+| Ruby on rails |  | yes |
 
 ## 2. Download 
 
@@ -37,6 +37,7 @@ https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-2
 
 | Note | Value 
 |:----:|:----:|
+| File Name | Majapahit-Linux-std-x86_64-29.1.iso |
 | File Size | 2,824,273,920 bytes |
 | MD5 | 3ead0d64a736619c65986a6e24102efb |
 | SHA1 | c826a95aab8d7ccc9e1955eef9e198a21cabe0e3 |
@@ -47,10 +48,11 @@ https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-2
 
 | Note | Value 
 |:----:|:----:|
-| File Size | |
-| MD5 | |
-| SHA1 | |
-| SHA256 | |
+| File Name | Majapahit-Linux-dev-x86_64-29.1.iso |
+| File Size | 3,365,634,048 bytes |
+| MD5 | d5cec1d8d3dfecf0e6de9c7bbc4f4343 |
+| SHA1 | 7a5b90cefd8a2866849d386147e6ed34274187e0 |
+| SHA256 | 0eb04910a33ed4ee0751ffd30c3ad67c8140be3e36e30fb28bc141ffd900c527 |
 
 ## 3. Example Image writing
 
@@ -70,7 +72,7 @@ sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
 
 ## 4. Gnome-control-center
 
-|Tweaks| > Fedora | > Majapahit|
+|Tweaks| Fedora | Majapahit|
 |:----:|:----:|:----:|
 | Dark theme (default) | no | yes |
 | Night light enabled | no | yes |
