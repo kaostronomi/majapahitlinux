@@ -87,3 +87,5 @@ sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
 ### Anaconda installer
 ![install](img/install.png)
 
+### Lightmode / Darkmode
+![mode](cast/darklight.gif)
