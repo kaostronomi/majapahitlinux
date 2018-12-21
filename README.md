@@ -10,7 +10,7 @@ The computer on which you intend to install Majapahit 29 from the live CD should
 
 ## 1. Majapahit available in two variants
 
-|Contain| - Standard -| Developer *still upload* -|
+|Contain| - Standard -| Developer -|
 |:----:|:----:|:----:|
 | RPM-Fusion | yes | yes |
 | Codec | yes | yes |
@@ -43,7 +43,7 @@ https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-2
 | SHA1 | c826a95aab8d7ccc9e1955eef9e198a21cabe0e3 |
 | SHA256 | 0b84a52ce0363b1fa7e60195a5444035da9c885f45f7bbf596b9184b89a40d51 |
 
-### Developer edition 29.1 (maintenance)
+### Developer edition 29.1
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-29.1.iso/
 
 | Note | Value 
