@@ -35,8 +35,22 @@ The computer on which you intend to install Majapahit 29 from the live CD should
 ### Standard edition 29.1
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-29.1.iso/
 
+| Note | Value 
+|:----:|:----:|
+| File Size | 2,824,273,920 bytes |
+| MD5 | 3ead0d64a736619c65986a6e24102efb |
+| SHA1 | c826a95aab8d7ccc9e1955eef9e198a21cabe0e3 |
+| SHA256 | 0b84a52ce0363b1fa7e60195a5444035da9c885f45f7bbf596b9184b89a40d51 |
+
 ### Developer edition 29.1 (maintenance)
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-29.1.iso/
+
+| Note | Value 
+|:----:|:----:|
+| File Size | |
+| MD5 | |
+| SHA1 | |
+| SHA256 | |
 
 ## 3. Example Image writing
 
