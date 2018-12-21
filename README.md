@@ -52,11 +52,12 @@ Majapahit is linux based on Fedora.
 ### Music Player
 ![rhythmbox](img/rhythmbox.png)
 
+### FeedReader
+![rss](img/rss.png)
+
 ### Welcome
 ![welcome](img/welcome.png)
 
 ### Anaconda installer
 ![install](img/install.png)
 
-### Menu (developer)
-![Preview 1](img/4.png)
