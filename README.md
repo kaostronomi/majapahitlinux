@@ -8,6 +8,10 @@ a DVD or USB drive (4Gib), and the capability to boot from this drive.
 a 1 GHz processor or faster
 at least 1 GB of memory (RAM)
 
+## Download 
+
+The Majapahit linux can be found here: https://osdn.net/projects/majapahit/releases/70404/
+
 ## 1. Majapahit available in two variants
 
 |Contain| - Standard -| Developer -|
