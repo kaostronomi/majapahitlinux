@@ -8,26 +8,6 @@ The computer on which you intend to install Majapahit 29 from the live CD should
 - a 1 GHz processor or faster
 - at least 1 GB of memory (RAM)
 
-## Download 
-
-The Majapahit linux can be found here: https://osdn.net/projects/majapahit/releases/70404/ (link is maintenance)
-
-## Example Image writing
-
-### For Windows
-
-- [Rufus](https://rufus.ie/en_IE.html "Rufus download") or
-- [LiliUSB](http://www.linuxliveusb.com/en/download "LiliUSB download")
-
-### For Linux
-
-- multiwriter,
-- gnome-multiwriter or
-- use command
-```
-sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
-```
-
 ## 1. Majapahit available in two variants
 
 |Contain| - Standard -| Developer *still upload* -|
@@ -50,6 +30,29 @@ sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
 | Ruby |  | `x` |
 | Ruby on rails |  | `x` |
 
+## Download 
+
+### Standard edition 29.1
+https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-29.1.iso/
+
+### Developer edition 29.1 (maintenance)
+https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-29.1.iso/
+
+## Example Image writing
+
+### For Windows
+
+- [Rufus](https://rufus.ie/en_IE.html "Rufus download") or
+- [LiliUSB](http://www.linuxliveusb.com/en/download "LiliUSB download")
+
+### For Linux
+
+- multiwriter,
+- gnome-multiwriter or
+- use command
+```
+sudo dd bs=1M if=Majapahit-Linux-std-x86_64-29.1.iso of=/dev/sdb
+```
 
 ## 2. Gnome-control-center
 
