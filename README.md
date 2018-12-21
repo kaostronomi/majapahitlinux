@@ -33,6 +33,8 @@ The computer on which you intend to install Majapahit 29 from the live CD should
 ## 2. Download 
 
 ### Standard edition 29.1
+
+#### Download Standard edition :
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-29.1.iso/
 
 | Note | Value 
@@ -44,7 +46,13 @@ https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-std-x86_64-2
 | SHA256 | 0b84a52ce0363b1fa7e60195a5444035da9c885f45f7bbf596b9184b89a40d51 |
 
 ### Developer edition 29.1
+
+- This edition for Developer : C, Python, Ruby, and Web dev (php5, nginx, mariadb)
+- IDE : Anjuta studio, Builder, Glade
+
+#### Download Developer edition :
 https://osdn.net/projects/majapahit/downloads/70404/Majapahit-Linux-dev-x86_64-29.1.iso/
+
 
 | Note | Value 
 |:----:|:----:|
