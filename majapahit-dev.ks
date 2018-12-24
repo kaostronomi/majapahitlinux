@@ -117,6 +117,9 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 	# detect hardware
 	inxi
 
+    # video download
+    youtube-dl
+
 	# Provides backup application
 	deja-dup
 	deja-dup-nautilus
