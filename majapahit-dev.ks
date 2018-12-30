@@ -91,15 +91,15 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
 # REBRANDING
 
-	-fedora-logos
-	-fedora-release
-	-fedora-release-workstation
-	-fedora-release-notes
-
-	generic-logos
-	generic-release
-	generic-release-workstation
-	generic-release-notes
+    -fedora-logos
+    -fedora-release
+    -fedora-release-workstation
+    -fedora-release-notes
+    
+    generic-logos
+    generic-release
+    generic-release-workstation
+    generic-release-notes
 
 # BACKGROUNDS
 
@@ -114,393 +114,400 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
     rpmfusion-free-release
     rpmfusion-nonfree-release
 
-	# detect hardware
-	inxi
+    # detect hardware
+    inxi
 
     # video download
     youtube-dl
 
-	# Provides backup application
-	deja-dup
-	deja-dup-nautilus
-
-	# Add extra gnome applications
-	gnome-calendar
+    # Provides backup application
+    deja-dup
+    deja-dup-nautilus
+    
+    # Add extra gnome applications
+    gnome-calendar
     gnome-todo
-	gnome-nettool
+    gnome-nettool
     gnome-tweaks
     gnome-boxes
-	gnome-shell-extension-pomodoro
+    gnome-shell-extension-pomodoro
     gnome-shell-extension-suspend-button
     gnome-shell-extension-disconnect-wifi
- 	gnome-shell-extension-background-logo
-
-	# tweak
-	dconf-editor
-
-	# Add cosmetic for gnome-terminal
-	powerline
-	powerline-fonts
-	tmux-powerline
-	vim-powerline
-
-	# image viewer
-	eog
-
-	# printer
-	epson-inkjet-printer-escpr
-	gutenprint-cups
-	stylus-toolbox
-	iscan-firmware
-	lsb
-
-	# thumbnail
-	gnome-directory-thumbnailer
-
-	# android
-	gvfs-mtp
-	android-tools
-
-	# encrypt
-	blivet-gui
-	gnupg
-	seahorse
-	seahorse-sharing
-
-	# icon for libre office
+    gnome-shell-extension-background-logo
+    
+    # tweak
+    dconf-editor
+    
+    # Add cosmetic for gnome-terminal
+    powerline
+    powerline-fonts
+    tmux-powerline
+    vim-powerline
+    
+    # image viewer
+    eog
+    
+    # printer
+    epson-inkjet-printer-escpr
+    gutenprint-cups
+    stylus-toolbox
+    iscan-firmware
+    lsb
+    
+    # thumbnail
+    gnome-directory-thumbnailer
+    
+    # android
+    gvfs-mtp
+    android-tools
+    
+    # encrypt
+    blivet-gui
+    gnupg
+    seahorse
+    seahorse-sharing
+    
+    # theme for libre office
     breeze-icon-theme
-
-	# compress
-	lzma
-	lha
-	arj
-	unarj
-	unace
-	dpkg
-	p7zip
-	p7zip-plugins
-	bzip2-devel
-	unrar
-	bzip2-libs.i686
-	file-roller
-
-	# nautilus extention
-	nautilus-search-tool
-	nautilus-image-converter
-	file-roller-nautilus
-	brasero-nautilus
-	seahorse-nautilus
-	deja-dup-nautilus
-	raw-thumbnailer
+    
+    # compress
+    lzma
+    lha
+    arj
+    unarj
+    unace
+    dpkg
+    p7zip
+    p7zip-plugins
+    bzip2-devel
+    unrar
+    bzip2-libs.i686
+    file-roller
+    
+    # nautilus extention
+    nautilus-search-tool
+    nautilus-image-converter
+    file-roller-nautilus
+    brasero-nautilus
+    seahorse-nautilus
+    deja-dup-nautilus
+    raw-thumbnailer
     gnome-terminal-nautilus
-
-	# codec
-	ffmpeg
-	gstreamer-plugins-base
-	gstreamer-plugins-bad
-	gstreamer-plugins-ugly
-	gstreamer-plugins-good-extras
-	gstreamer-plugins-bad-extras
-	gstreamer-plugins-bad-nonfree
-	gstreamer-ffmpeg
-	gstreamer1-libav
-	gstreamer1-plugins-base 
-	gstreamer1-plugins-ugly
-	gstreamer1-plugins-good
-	gstreamer1-plugins-good-extras
-	gstreamer1-plugins-bad-free
-	gstreamer1-plugins-bad-nonfree
-	gstreamer1-plugins-bad-freeworld
-	gstreamer1-plugin-mpg123
+    
+    # codec
+    ffmpeg
+    gstreamer-plugins-base
+    gstreamer-plugins-bad
+    gstreamer-plugins-ugly
+    gstreamer-plugins-good-extras
+    gstreamer-plugins-bad-extras
+    gstreamer-plugins-bad-nonfree
+    gstreamer-ffmpeg
+    gstreamer1-libav
+    gstreamer1-plugins-base 
+    gstreamer1-plugins-ugly
+    gstreamer1-plugins-good
+    gstreamer1-plugins-good-extras
+    gstreamer1-plugins-bad-free
+    gstreamer1-plugins-bad-nonfree
+    gstreamer1-plugins-bad-freeworld
+    gstreamer1-plugin-mpg123
 
 # PRODUCTIVITY
 
-	# browser
+    # browser
     firefox
     -fedora-bookmarks
-
-	# office
-	libreoffice
-	libreoffice-langpack-en
-	libreoffice-help-en
-
+    
+    # office
+    libreoffice
+    libreoffice-langpack-en
+    libreoffice-help-en
+    
     # rss
     feedreader
-
-	#torrent
-	transmission-gtk
-
-	#parted
-	gparted
-
-	#disc burner
-	brasero
-
-	# music
-	rhythmbox
-
-	# chat & call
-	empathy
-
-	# irc
-	polari
-
-	# text editor
-	gedit
-
-	# git
-	git
-	git-crypt
-
-	# session
-	tmux
+    
+    #torrent
+    transmission-gtk
+    
+    #parted
+    gparted
+    
+    #disc burner
+    brasero
+    
+    # music
+    rhythmbox
+    
+    # chat & call
+    empathy
+    
+    # irc
+    polari
+    
+    # text editor
+    gedit
+    
+    # git
+    git
+    git-crypt
+    
+    # session
+    tmux
     	
     # video editor
     pitivi
-
-	# remote desktop
-	vinagre
-	vino
-
+    
+    # remote desktop
+    vinagre
+    vino
+    
     # bootable
     gnome-multi-writer
-
+    
     # cli editor
-	vim
+    vim
     
 # UI/UX
 
-	# inkscape plugin
-	inkscape
-	inkscape-psd
-	inkscape-sozi
-	inkscape-table
-	
-	# gimp plugin
-	gimp
-	gimpfx-foundry
-	gimp-paint-studio
-	gimp-dds-plugin 
-	gimp-fourier-plugin 
-	gimp-gap
-	gimp-high-pass-filter
-	gimp-layer-via-copy-cut
-	gimp-lensfun
-	gimp-lqr-plugin
-	gimp-normalmap
-	gimp-paint-studio
-	gimp-resynthesizer
-	gimp-save-for-web
-	gimp-separate+
-	gimp-wavelet-decompose
-	gmic-gimp
+    # inkscape plugin
+    inkscape
+    inkscape-psd
+    inkscape-sozi
+    inkscape-table
+    
+    # gimp plugin
+    gimp
+    gimpfx-foundry
+    gimp-paint-studio
+    gimp-dds-plugin 
+    gimp-fourier-plugin 
+    gimp-gap
+    gimp-high-pass-filter
+    gimp-layer-via-copy-cut
+    gimp-lensfun
+    gimp-lqr-plugin
+    gimp-normalmap
+    gimp-paint-studio
+    gimp-resynthesizer
+    gimp-save-for-web
+    gimp-separate+
+    gimp-wavelet-decompose
+    gmic-gimp
 
 ### VERSION 2 DEVELOPER ###
 
 # DEVELOPER
 
-	# ide programmer
-	anjuta
-	gnome-builder
-	glade
-	-ninja-ide
-
+    # ide programmer
+    anjuta
+    gnome-builder
+    glade
+    -ninja-ide
+    
     # git gui
-	gitg
-
-	# biner editor
-	ghex
+    gitg
+    
+    # biner editor
+    ghex
 
 # C
-	# GCC installation
-	gcc
-	# Compiling 32-bit binaries on a 64-bit Fedora
-	libgcc.i686
-	glibc-devel.i686
-	# CLANG installation
-	clang
-	# C++
-	gcc-c++
-	# Autotools
-	autoconf
-	automake
-	# CMake
-	cmake
-	# Static Analysis
-	csbuild
-	# Gtk+
-	gtk3-devel
-	gstreamer-devel
-	clutter-devel
-	webkit2gtk3-devel
-	libgda-devel
-	gobject-introspection-devel
-	devhelp
-	gtk3-devel-docs
-	gstreamer-devel-docs
-	clutter-doc
+    # GCC installation
+    gcc
+    # Compiling 32-bit binaries on a 64-bit Fedora
+    libgcc.i686
+    glibc-devel.i686
+    # CLANG installation
+    clang
+    # C++
+    gcc-c++
+    # Autotools
+    autoconf
+    automake
+    # CMake
+    cmake
+    # Static Analysis
+    csbuild
+    # Gtk+
+    gtk3-devel
+    gstreamer-devel
+    clutter-devel
+    webkit2gtk3-devel
+    libgda-devel
+    gobject-introspection-devel
+    devhelp
+    gtk3-devel-docs
+    gstreamer-devel-docs
+    clutter-doc
 
 # FOR PYTHON PROGRAMMER
 
-	@python-classroom
-    	-thonny
-    	-mu
-    	-python3-idle
-	@python-science
-	nano
-	openssh-clients
-	wget
-	python3-matplotlib-tk
-	python3-pillow-tk
-	bpython
-    	python3-bpython
+    @python-classroom
+        -thonny
+        -mu
+        -python3-idle
+    @python-science
+    nano
+    openssh-clients
+    wget
+    python3-matplotlib-tk
+    python3-pillow-tk
+    bpython
+        python3-bpython
 
 # PYTHON DJANGO
 
-	python3-pip 
-	python3-virtualenv 
-	python3-virtualenvwrapper 
-	python3-django
+    python3-pip 
+    python3-virtualenv 
+    python3-virtualenvwrapper 
+    python3-django
 
 # PYTHON
 
-	# PyPI (pip3 install --user bokeh)
-	# Django ((project_venv) $ pip install django)
-	# Flask (pip install flask)
-	# MicroPython
-	micropython
-	# Mu - simple IDE for BBC micro:bit
-	-mu
-	# uFlash - CLI for flashing the micro:bit
-	uflash
-	# Esptool - CLI for flashing boards with the ESP8266 chip
-	esptool
-	# Picocom - minimal terminal emulation program
-	picocom
-	# PyGObject (PyGI)
-	pygobject3
-	python3-gobject
-	# Sphinx
-	python2-sphinx
-	python3-sphinx
-	# Tox
-	tox
-	# Scientific Python Stack
-	# NumPy
-	python3-numpy
-	# SciPy
-	python3-scipy
-	# matplotlib
-	python3-matplotlib
-	# IPython
-	python3-ipython
-	# pandas
-	python3-pandas
-	# SymPy
-	python3-sympy
-	## Jupyter Notebook
-	-notebook
+    # PyPI (pip3 install --user bokeh)
+    # Django ((project_venv) $ pip install django)
+    # Flask (pip install flask)
+    # MicroPython
+    micropython
+    # Mu - simple IDE for BBC micro:bit
+    -mu
+    # uFlash - CLI for flashing the micro:bit
+    uflash
+    # Esptool - CLI for flashing boards with the ESP8266 chip
+    esptool
+    # Picocom - minimal terminal emulation program
+    picocom
+    # PyGObject (PyGI)
+    pygobject3
+    python3-gobject
+    # Sphinx
+    python2-sphinx
+    python3-sphinx
+    # Tox
+    tox
+    # Scientific Python Stack
+    # NumPy
+    python3-numpy
+    # SciPy
+    python3-scipy
+    # matplotlib
+    python3-matplotlib
+    # IPython
+    python3-ipython
+    # pandas
+    python3-pandas
+    # SymPy
+    python3-sympy
+    ## Jupyter Notebook
+    -notebook
 
 # RUBY
 
-	# CRuby
-	ruby
-	rubygem-rake
-	rubygem-test-unit
-	# JRuby
-	jruby
-	# Gems
-	@c-development
-	ruby-devel
-	zlib-devel
-	patch
-	rubygem-thor
-	# Bundler (gem install bundler)
-	ruby
-	rubygem-bundler
-	# Ruby on Rails (or gem install rails)
-	@c-development
-	ruby-devel
-	zlib-devel
-	rubygem-rails
-	@rubyonrails
-	# Sinatra (or gem install sinatra)
-	ruby
-	rubygem-sinatra
+    # CRuby
+    ruby
+    rubygem-rake
+    rubygem-test-unit
+    # JRuby
+    jruby
+    # Gems
+    @c-development
+    ruby-devel
+    zlib-devel
+    patch
+    rubygem-thor
+    # Bundler (gem install bundler)
+    ruby
+    rubygem-bundler
+    # Ruby on Rails (or gem install rails)
+    @c-development
+    ruby-devel
+    zlib-devel
+    rubygem-rails
+    @rubyonrails
+    # Sinatra (or gem install sinatra)
+    ruby
+    rubygem-sinatra
 
 # RUBY ON RAILS
 
-	git-core
-	zlib
-	zlib-devel
-	gcc-c++
-	patch
-	readline
-	readline-devel
-	libyaml-devel
-	libffi-devel
-	openssl-devel
-	make
-	bzip2
-	autoconf
-	automake
-	libtool
-	bison
-	curl
-	sqlite-devel
+    git-core
+    zlib
+    zlib-devel
+    gcc-c++
+    patch
+    readline
+    readline-devel
+    libyaml-devel
+    libffi-devel
+    openssl-devel
+    make
+    bzip2
+    autoconf
+    automake
+    libtool
+    bison
+    curl
+    sqlite-devel
 
 # PHP
 
-	php-cli
-	phpunit
-	composer
-	php-mysqli
+    php-cli
+    phpunit
+    composer
+    php-mysqli
 
 # PHP LARAVEL 5
 
-	composer
-	php
-	php-common
-	php-cli
-	php-pdo
-	php-mbstring
-	php-zip
-	php-xml
-	php-mysqlnd
+    composer
+    php
+    php-common
+    php-cli
+    php-pdo
+    php-mbstring
+    php-zip
+    php-xml
+    php-mysqlnd
 
 # NGINX HTTP SERVER
 
-	nginx
-	php-fpm
+    nginx
+    php-fpm
 
 # MARIADB SQL
 
-	mariadb
-	mariadb-server
-	phpMyAdmin
-	libreoffice-base
-	mariadb-java-client
-	mariadb-connector-odbc
+    mariadb
+    mariadb-server
+    phpMyAdmin
+    libreoffice-base
+    mariadb-java-client
+    mariadb-connector-odbc
+
+# Go
+    golang
+    golang-godoc
+    
+# Hugo
+    hugo
 
 # RPM PACKAGING
 
-	fedora-packager
-	rpmdevtools
-	gcc
-	mock
-	mock-scm
+    fedora-packager
+    rpmdevtools
+    gcc
+    mock
+    mock-scm
 
 # OPENSHIFT
 
-	origin-clients
+    origin-clients
 
 # FLATPAK
 
-	flatpak
+    flatpak
 
 # REBASE-HELPER
 
-	rebase-helper
+    rebase-helper
 
 %end
 

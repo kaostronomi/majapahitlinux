@@ -91,15 +91,15 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
 
 # REBRANDING
 
-	-fedora-logos
-	-fedora-release
-	-fedora-release-workstation
-	-fedora-release-notes
-
-	generic-logos
-	generic-release
-	generic-release-workstation
-	generic-release-notes
+    -fedora-logos
+    -fedora-release
+    -fedora-release-workstation
+    -fedora-release-notes
+    
+    generic-logos
+    generic-release
+    generic-release-workstation
+    generic-release-notes
 
 # BACKGROUNDS
 
@@ -114,186 +114,186 @@ repo --name=rpmfusion-non-free-updates --mirrorlist=http://mirrors.rpmfusion.org
     rpmfusion-free-release
     rpmfusion-nonfree-release
 
-	# detect hardware
-	inxi
+    # detect hardware
+    inxi
 
     # video download
     youtube-dl
 
-	# Provides backup application
-	deja-dup
-	deja-dup-nautilus
-
-	# Add extra gnome applications
-	gnome-calendar
+    # Provides backup application
+    deja-dup
+    deja-dup-nautilus
+    
+    # Add extra gnome applications
+    gnome-calendar
     gnome-todo
-	gnome-nettool
+    gnome-nettool
     gnome-tweaks
     gnome-boxes
-	gnome-shell-extension-pomodoro
+    gnome-shell-extension-pomodoro
     gnome-shell-extension-suspend-button
     gnome-shell-extension-disconnect-wifi
- 	gnome-shell-extension-background-logo
-
-	# tweak
-	dconf-editor
-
-	# Add cosmetic for gnome-terminal
-	powerline
-	powerline-fonts
-	tmux-powerline
-	vim-powerline
-
-	# image viewer
-	eog
-
-	# printer
-	epson-inkjet-printer-escpr
-	gutenprint-cups
-	stylus-toolbox
-	iscan-firmware
-	lsb
-
-	# thumbnail
-	gnome-directory-thumbnailer
-
-	# android
-	gvfs-mtp
-	android-tools
-
-	# encrypt
-	blivet-gui
-	gnupg
-	seahorse
-	seahorse-sharing
-
-	# theme for libre office
+    gnome-shell-extension-background-logo
+    
+    # tweak
+    dconf-editor
+    
+    # Add cosmetic for gnome-terminal
+    powerline
+    powerline-fonts
+    tmux-powerline
+    vim-powerline
+    
+    # image viewer
+    eog
+    
+    # printer
+    epson-inkjet-printer-escpr
+    gutenprint-cups
+    stylus-toolbox
+    iscan-firmware
+    lsb
+    
+    # thumbnail
+    gnome-directory-thumbnailer
+    
+    # android
+    gvfs-mtp
+    android-tools
+    
+    # encrypt
+    blivet-gui
+    gnupg
+    seahorse
+    seahorse-sharing
+    
+    # theme for libre office
     breeze-icon-theme
-
-	# compress
-	lzma
+    
+    # compress
+    lzma
     lha
     arj
-	unarj
-	unace
-	dpkg
-	p7zip
-	p7zip-plugins
-	bzip2-devel
-	unrar
-	bzip2-libs.i686
-	file-roller
-
-	# nautilus extention
-	nautilus-search-tool
-	nautilus-image-converter
-	file-roller-nautilus
-	brasero-nautilus
-	seahorse-nautilus
-	deja-dup-nautilus
-	raw-thumbnailer
+    unarj
+    unace
+    dpkg
+    p7zip
+    p7zip-plugins
+    bzip2-devel
+    unrar
+    bzip2-libs.i686
+    file-roller
+    
+    # nautilus extention
+    nautilus-search-tool
+    nautilus-image-converter
+    file-roller-nautilus
+    brasero-nautilus
+    seahorse-nautilus
+    deja-dup-nautilus
+    raw-thumbnailer
     gnome-terminal-nautilus
-
-	# codec
-	ffmpeg
-	gstreamer-plugins-base
-	gstreamer-plugins-bad
-	gstreamer-plugins-ugly
-	gstreamer-plugins-good-extras
-	gstreamer-plugins-bad-extras
-	gstreamer-plugins-bad-nonfree
-	gstreamer-ffmpeg
-	gstreamer1-libav
-	gstreamer1-plugins-base 
-	gstreamer1-plugins-ugly
-	gstreamer1-plugins-good
-	gstreamer1-plugins-good-extras
-	gstreamer1-plugins-bad-free
-	gstreamer1-plugins-bad-nonfree
-	gstreamer1-plugins-bad-freeworld
-	gstreamer1-plugin-mpg123
+    
+    # codec
+    ffmpeg
+    gstreamer-plugins-base
+    gstreamer-plugins-bad
+    gstreamer-plugins-ugly
+    gstreamer-plugins-good-extras
+    gstreamer-plugins-bad-extras
+    gstreamer-plugins-bad-nonfree
+    gstreamer-ffmpeg
+    gstreamer1-libav
+    gstreamer1-plugins-base 
+    gstreamer1-plugins-ugly
+    gstreamer1-plugins-good
+    gstreamer1-plugins-good-extras
+    gstreamer1-plugins-bad-free
+    gstreamer1-plugins-bad-nonfree
+    gstreamer1-plugins-bad-freeworld
+    gstreamer1-plugin-mpg123
 
 # PRODUCTIVITY
 
-	# browser
+    # browser
     firefox
     -fedora-bookmarks
-
-	# office
-	libreoffice
-	libreoffice-langpack-en
-	libreoffice-help-en
-
+    
+    # office
+    libreoffice
+    libreoffice-langpack-en
+    libreoffice-help-en
+    
     # rss
     feedreader
-
-	#torrent
-	transmission-gtk
-
-	#parted
-	gparted
-
-	#disc burner
-	brasero
-
-	# music
-	rhythmbox
-
-	# chat & call
-	empathy
-
-	# irc
-	polari
-
-	# text editor
-	gedit
-
-	# git
-	git
-	git-crypt
-
-	# session
-	tmux
+    
+    #torrent
+    transmission-gtk
+    
+    #parted
+    gparted
+    
+    #disc burner
+    brasero
+    
+    # music
+    rhythmbox
+    
+    # chat & call
+    empathy
+    
+    # irc
+    polari
+    
+    # text editor
+    gedit
+    
+    # git
+    git
+    git-crypt
+    
+    # session
+    tmux
     	
     # video editor
     pitivi
-
-	# remote desktop
-	vinagre
-	vino
-
+    
+    # remote desktop
+    vinagre
+    vino
+    
     # bootable
     gnome-multi-writer
-
+    
     # cli editor
-	vim
+    vim
     
 # UI/UX
 
-	# inkscape plugin
-	inkscape
-	inkscape-psd
-	inkscape-sozi
-	inkscape-table
-	
-	# gimp plugin
-	gimp
-	gimpfx-foundry
-	gimp-paint-studio
-	gimp-dds-plugin 
-	gimp-fourier-plugin 
-	gimp-gap
-	gimp-high-pass-filter
-	gimp-layer-via-copy-cut
-	gimp-lensfun
-	gimp-lqr-plugin
-	gimp-normalmap
-	gimp-paint-studio
-	gimp-resynthesizer
-	gimp-save-for-web
-	gimp-separate+
-	gimp-wavelet-decompose
-	gmic-gimp
+    # inkscape plugin
+    inkscape
+    inkscape-psd
+    inkscape-sozi
+    inkscape-table
+    
+    # gimp plugin
+    gimp
+    gimpfx-foundry
+    gimp-paint-studio
+    gimp-dds-plugin 
+    gimp-fourier-plugin 
+    gimp-gap
+    gimp-high-pass-filter
+    gimp-layer-via-copy-cut
+    gimp-lensfun
+    gimp-lqr-plugin
+    gimp-normalmap
+    gimp-paint-studio
+    gimp-resynthesizer
+    gimp-save-for-web
+    gimp-separate+
+    gimp-wavelet-decompose
+    gmic-gimp
 
 %end
 

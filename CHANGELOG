@@ -1,0 +1,27 @@
+Overview of changes in 29.2
+===========================
+
+* Add youtube-dl
+* Add 11 Wallpaper (majapahit-standard-backgrounds)
+
+Developer Edition
+ Add Golang and Hugo
+
+Overview of changes in 29.1
+===========================
+
+* Dark theme 'Adwaita-dark'
+* Night Light enabled
+* Enabled Extensions : suspend-button, alternate-tab, disconnect-wifi, background-logo
+* Default theme : Adwaita dark
+* Decrease font size
+* Add shortcut Home <Super>e
+* Add shortcut Web Browser <Super>w
+* Add Darkmode and Lightmode
+* Gedit enabled display-line-numbers and display-overview-map
+* Enabled Automatic timezone
+* Enabled clock chow date and second
+* Enabled battery percentage
+* Nautilus : default zoom level 'standard'
+* Nautilus : sort directories first
+* Touchpad : Tap to click enabled

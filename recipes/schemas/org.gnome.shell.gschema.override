@@ -83,4 +83,8 @@ sync-passwords-enabled=true
 [org.gnome.desktop.datetime]
 automatic-timezone=true
 
+[org.gnome.anjuta]
+gdl-style='Tabs'
 
+[org.gnome.Terminal.Legacy.Settings]
+default-show-menubar=false
