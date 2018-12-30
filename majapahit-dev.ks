@@ -3,7 +3,7 @@
 #  ╩ ╩╩ ╩╚╝╩ ╩╩  ╩ ╩╩ ╩╩ ╩
 
 # versi 2 : developer
-# size original : 10175 + 500
+# size original : 10175 + 700
 
 lang en_US.UTF-8
 keyboard us
@@ -15,7 +15,7 @@ firewall --enabled --service=mdns
 xconfig --startxonboot
 zerombr
 clearpart --all
-part / --size 11195 --fstype ext4
+part / --size 11395 --fstype ext4
 services --enabled=NetworkManager,ModemManager --disabled=sshd
 network --bootproto=dhcp --device=link --activate
 rootpw --lock --iscrypted locked
