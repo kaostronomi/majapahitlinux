@@ -1,0 +1,223 @@
+# fedora development {{{
+alias fdeveloper="sudo dnf install \
+# Start a project
+    # Software Application Creation Guides
+        # Web Application
+            # Apache HTTP Server
+            httpd \
+            # Python Django
+            python3-pip python3-virtualenv python3-virtualenvwrapper python3-django \
+            # PHP Laravel 5
+            composer php php-common php-cli php-pdo php-mbstring php-zip php-xml php-mysqlnd \
+            # Jekyll (gem install jekyll)
+            ruby-devel \
+            # Ruby on Rails
+            git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel \
+                # Installing rails (gem install rails)
+                nodejs \
+            # NGINX HTTP Server
+            nginx \
+            php-fpm \
+            # Hugo
+            hugo \
+            # PHP Symfony
+            php-symfony \
+            # PHP Zend Framework 2
+            php-ZendFramework2 \
+        \
+        # Desktop GUI Application 
+        \
+        # Command Line Application Help Needed
+        \
+        # Mobile application
+            # Mobile application
+            glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 \
+    \
+    # Hardware Device Project Creation Guides 
+        # Work with Other Embeded Devices
+        # Work with Arduino
+        arduino \
+        # Work with Raspberry Pi
+    \
+    # Project Collaboration Guides
+         # Provide Documentation Help Needed
+         # Collaborate Effectively Help Needed
+
+# Get tools
+    # Development Tools Overview
+        # DevAssistant (pip3 install devassistant --user)
+        # Virt-builder
+        libguestfs-tools-c \
+        # Eclipse
+        eclipse \
+        # ABRT
+        abrt-cli-ng \
+        # Vagrant
+        vagrant vagrant-libvirt \
+        # Docker
+        sen docker docker-compose \
+
+# Languages & databases
+    # Languages
+        # QT
+            qt-creator \
+        # C#
+            # C# IDEs in Fedora
+            eclipse eclipse-mpc \
+            monodevelop \
+            # .NET Core (sudo dnf copr enable @dotnet-sig/dotnet)
+            # dotnet \
+            # Mono
+            mono-devel \
+            nant \
+            nunit nunit2-gui \
+        \
+        # C
+            # C
+            # GCC installation
+            gcc \
+            # Compiling 32-bit binaries on a 64-bit Fedora
+            libgcc.i686 glibc-devel.i686 \
+            # CLANG installation
+            clang \
+            \
+            # C++
+                gcc-c++ \
+            # Autotools
+            autoconf automake \
+            # CMake
+            cmake \
+            # Static Analysis
+            csbuild \
+            # Gtk+
+            gtk3-devel gstreamer-devel clutter-devel webkit2gtk3-devel libgda-devel gobject-introspection-devel \
+            devhelp gtk3-devel-docs gstreamer-devel-docs clutter-doc \
+        \
+        # Elixir
+        elixir \
+        \
+        # Go
+        golang \
+        golang-godoc \
+        \
+        # Haskell
+            # Haskell
+            ghc haskell-platform \
+            # Cabal
+            cabal-install \
+            # Leksah
+            ghc cabal-install haskell-platform gobject-introspection-devel webkit2gtk3-devel gtksourceview3-devel \
+        \
+        # Java
+            # Java
+            java-1.8.0-openjdk-devel icedtea-web java-1.8.0-openjdk \
+            # Java build tools
+            maven \
+            gradle \
+            ant apache-ivy \
+        \
+        # Node.js
+        nodejs \
+        nodejs-has-yarn \
+        \
+        # Perl
+        perl-core \
+        \
+        # PHP
+            # PHP
+            php-cli phpunit composer php-mysqli \
+            # PEAR
+            php-pear \
+            php-pear-Mail-Mime \
+        \
+        # Python
+            # Python
+            # PyPI (pip3 install --user bokeh)
+            # Django ((project_venv) $ pip install django)
+            # Flask (pip install flask)
+            # MicroPython
+            micropython \
+                # Mu - simple IDE for BBC micro:bit
+                mu \
+                # uFlash - CLI for flashing the micro:bit
+                uflash \
+                # Esptool - CLI for flashing boards with the ESP8266 chip
+                esptool \
+                # Picocom - minimal terminal emulation program
+                picocom \
+            # PyGObject (PyGI)
+            pygobject3 python3-gobject \
+            # Sphinx
+            python2-sphinx python3-sphinx \
+            # Tox
+            tox \
+            # Scientific Python Stack
+                # NumPy
+                python3-numpy \
+                # SciPy
+                python3-scipy \
+                # matplotlib
+                python3-matplotlib \
+                # IPython
+                python3-ipython \
+                # pandas
+                python3-pandas \
+                # SymPy
+                python3-sympy \
+                # Jupyter Notebook
+                notebook \
+        \
+        # Ruby
+            # CRuby
+            ruby \
+            rubygem-rake rubygem-test-unit \
+            # JRuby
+            jruby \
+            # Gems
+            @c-development ruby-devel zlib-devel \
+            patch \
+            rubygem-thor \
+            # Bundler (gem install bundler)
+            ruby rubygem-bundler \
+            # Ruby on Rails (or gem install rails)
+            @c-development ruby-devel zlib-devel \
+            rubygem-rails @rubyonrails \
+            # Sinatra (or gem install sinatra)
+            ruby rubygem-sinatra \
+        \
+        # Rust
+            # Rust
+            rust cargo \
+        \
+    # Databases
+        # MongoDB
+        mongodb mongodb-server \
+        # SQLite
+        sqlite \
+        sqlite-devel sqlite-tcl sqlite-jdbc \
+        sqliteman \
+        sqlite-doc sqlite-jdbc-javadoc \
+        # PostgreSQL
+        postgresql postgresql-server \
+        postgresql-docs \
+        # MariaDB SQL
+        mariadb mariadb-server phpMyAdmin libreoffice-base mariadb-java-client mariadb-connector-odbc \
+        # Cassandra
+        cassandra cassandra-server \
+\
+# Deploy and distribute
+    # RPM Packaging
+    fedora-packager rpmdevtools gcc mock mock-scm \
+    # Secondary Architectures
+    # Copr Build Service
+    # OpenShift
+    origin-clients docker \
+    # Flatpak
+    flatpak \
+    # Maintain and Improve
+        # Rebase-helper
+        rebase-helper \
+        # Static Analysis
+        csbuild \
+
+"
