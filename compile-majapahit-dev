@@ -4,8 +4,8 @@ sudo setenforce 0
 sudo livecd-creator \
     --fslabel=Majapahit-Linux-dev-x86_64-29.1 \
     --config=majapahit-std.ks \
-    --cache=majapahit-cache \
-    --tmpdir=majapahit-temp \
+    --cache=majapahit-cache/ \
+    --tmpdir=majapahit-temp/ \
     --verbose
 sudo chown kaostronomi:kaostronomi *.iso
 sudo setenforce 1
