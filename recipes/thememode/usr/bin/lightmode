@@ -1,0 +1,10 @@
+#!/bin/bash
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+gsettings set org.gnome.desktop.interface cursor-theme 'breeze_cursors'
+gsettings set org.gnome.shell.extensions.user-theme name ''
+gsettings set org.gnome.builder night-mode 'false'
+gsettings set org.gnome.builder.editor style-scheme-name 'builder'
+gsettings set org.gnome.gedit.preferences.editor scheme 'classic'
+# terminal always dark
+gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'dark'

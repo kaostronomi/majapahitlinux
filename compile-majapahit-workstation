@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo '##########################################'
+echo '######   BUILD                      ######'
+echo '######   ╔╦╗╔═╗ ╦╔═╗╔═╗╔═╗╦ ╦╦╔╦╗   ######'
+echo '######   ║║║╠═╣ ║╠═╣╠═╝╠═╣╠═╣║ ║    ######'
+echo '######   ╩ ╩╩ ╩╚╝╩ ╩╩  ╩ ╩╩ ╩╩ ╩    ######'
+echo '######   WORKSTATION v 29.1.2       ######'
+echo '##########################################'
+sudo setenforce 0
+sudo livecd-creator \
+    --fslabel=Majapahit-Linux-Live-29.1.2 \
+    --config=majapahit-workstation.ks \
+    --cache=../cache/ \
+    --tmpdir=../temp/ \
+    --verbose
+sudo chown kaostronomi:kaostronomi *.iso
+mv Majapahit-Linux-Live-29.1.2.iso Majapahit-Workstation-Live-29.1.2.iso
+sudo setenforce 1
+echo '##########################################'
+echo '######      F  I  N  I  S  H       #######'
+echo '##########################################'

@@ -1,0 +1,19 @@
+[$Version]
+update_info=gwenview.upd:SideBar_StatusBar_Rename
+
+[MainWindow]
+Height 768=372
+State=AAAA/wAAAAD9AAAAAAAABVYAAAJ8AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1366=798
+Window-Maximized 768x1366=true
+
+[Recent Files]
+
+[SideBar]
+IsVisible BrowseMode=true
+IsVisible ViewMode=true
+IsVisible ViewMode FullScreen=false
+
+[ThumbnailView]
+ListVideos=false

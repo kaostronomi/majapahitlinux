@@ -9,15 +9,31 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="28.390434mm"
-   height="28.390434mm"
-   viewBox="0 0 28.390435 28.390434"
+   width="224"
+   height="224"
+   id="svg2951"
    version="1.1"
-   id="svg2633"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="start-here.svg"
+   inkscape:export-filename="/home/kaostronomi/Documents/majapahit/recipes/icons/hicolor/16x16/apps/fedora-logo-icon.png"
+   inkscape:export-xdpi="6.8571429"
+   inkscape:export-ydpi="6.8571429">
   <defs
-     id="defs2627">
+     id="defs2953">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective2959" />
+    <inkscape:perspective
+       id="perspective2943"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
     <filter
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
@@ -39,11 +55,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.4882941"
-     inkscape:cx="-2.3330103"
-     inkscape:cy="48.648011"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:zoom="2.8"
+     inkscape:cx="118.70566"
+     inkscape:cy="99.317073"
+     inkscape:document-units="px"
+     inkscape:current-layer="g882"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
@@ -52,7 +68,7 @@
      inkscape:window-maximized="1"
      inkscape:snap-page="true" />
   <metadata
-     id="metadata2630">
+     id="metadata2956">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -67,10 +83,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-143.05406,-40.127731)">
+     transform="translate(-373.71429,-334.64487)">
     <g
        id="g882"
-       transform="translate(10.819756,-5.4306238)">
+       transform="matrix(8.9083815,0,0,8.9083815,-818.73586,-85.662735)">
       <path
          inkscape:connector-curvature="0"
          id="path833"

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo '##########################################'
+echo '######   BUILD                      ######'
+echo '######   ╔╦╗╔═╗ ╦╔═╗╔═╗╔═╗╦ ╦╦╔╦╗   ######'
+echo '######   ║║║╠═╣ ║╠═╣╠═╝╠═╣╠═╣║ ║    ######'
+echo '######   ╩ ╩╩ ╩╚╝╩ ╩╩  ╩ ╩╩ ╩╩ ╩    ######'
+echo '######   DEVELOPER v 29.1.2         ######'
+echo '##########################################'
+setenforce 0
+livecd-creator \
+    --fslabel=Majapahit-Linux-Live-29.1.2 \
+    --config=majapahit-developer.ks \
+    --cache=../cache/ \
+    --tmpdir=../temp/ \
+    --verbose
+chown kaostronomi:kaostronomi *.iso
+mv Majapahit-Linux-Live-29.1.2.iso Majapahit-Developer-Live-29.1.2.iso
+setenforce 1
+echo '##########################################'
+echo '######      F  I  N  I  S  H       #######'
+echo '##########################################'

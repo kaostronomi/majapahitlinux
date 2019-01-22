@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# upgrade 29 to 29
+sed -i -e 's/29/29/g' recipes/generic-release/etc/fedora-release
+
+# upgrade 29 to 29
+sed -i -e 's/29/29/gI' recipes/generic-release/usr/lib/os.release.d/os-release-fedora recipes/generic-release/usr/lib/os.release.d/os-release-workstation
+
+# upgrade Twenty Nine to Twenty Nine
+sed -i -e 's/Twenty Nine/Twenty Nine/gI' recipes/generic-release/usr/lib/os.release.d/os-release-fedora recipes/generic-release/usr/lib/os.release.d/os-release-workstation
+
+# upgrade 29.1.1 to 29.1.2
+sed -i -e 's/29.1.1/29.1.2/gI' compile-majapahit-workstation compile-majapahit-developer

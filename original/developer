@@ -146,9 +146,11 @@ alias fdeveloper="sudo dnf install \
                 # Picocom - minimal terminal emulation program
                 picocom \
             # PyGObject (PyGI)
-            pygobject3 python3-gobject \
+            pygobject3 \
+            python3-gobject \
             # Sphinx
-            python2-sphinx python3-sphinx \
+            python2-sphinx \
+            python3-sphinx \
             # Tox
             tox \
             # Scientific Python Stack

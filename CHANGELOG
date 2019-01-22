@@ -1,17 +1,47 @@
-Overview of changes in 29.2
-===========================
+Overview of changes in 29.1.2
+=============================
 
-* Add youtube-dl
+General
+* Add Youtube-dl
 * Add 11 Wallpaper (majapahit-standard-backgrounds)
+* Structured and beauty code
+* Improve logos and icon
+* Night Light disabled
+* Fix iso name
+* Improve .bashrc
+* Terminal always dark
+* Reduce font part 1
+    -lohit*
+    -google-noto-sans-sinhala-fonts
+    -google-noto-fonts-common
+    -google-noto-cjk-fonts-common
+    -google-noto-sans-cjk-ttc-fonts
+    -google-noto-serif-cjk-ttc-fonts
+    -paktype-naskh-basic-fonts
+    -khmeros-base-fonts
+    -smc-meera-fonts
+    -thai-scalable-waree-fonts
+    -jomolhari-fonts
+* Reduce fonts part 2(we make no bones about admitting we're english-only)
+    wqy-microhei-fonts              # a compact CJK font, to replace:
+    -naver-nanum-gothic-fonts       # Korean
+    -vlgothic-fonts                 # Japanese
+    -adobe-source-han-sans-cn-fonts # simplified Chinese
+    -adobe-source-han-sans-tw-fonts # traditional Chinese
+    -paratype-pt-sans-fonts         # Cyrillic (already supported by DejaVu), huge
+    #-stix-fonts                    # mathematical symbols
 
 Developer Edition
- Add Golang and Hugo
+* Add Golang and Hugo
+
+NEW Designer Edition (KDE)
+* Initial Release
 
 Overview of changes in 29.1
 ===========================
 
+General
 * Dark theme 'Adwaita-dark'
-* Night Light enabled
 * Enabled Extensions : suspend-button, alternate-tab, disconnect-wifi, background-logo
 * Default theme : Adwaita dark
 * Decrease font size
@@ -25,3 +55,4 @@ Overview of changes in 29.1
 * Nautilus : default zoom level 'standard'
 * Nautilus : sort directories first
 * Touchpad : Tap to click enabled
+* Night Light enabled
